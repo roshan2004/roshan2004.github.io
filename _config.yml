@@ -1,0 +1,11 @@
+# basic options
+title: Academic Blog of Roshan Shrestha
+author: Roshan Shrestha
+email: roshanpra@gmail.com
+description: Academic Blog of Roshan Shrestha
+twitter_username: roshan_shrestha
+github_username:  roshan2004
+
+# Build settings
+markdown: kramdown
+theme: minima
