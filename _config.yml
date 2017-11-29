@@ -5,6 +5,7 @@ email: roshanpra@gmail.com
 description: Academic Blog of Roshan Shrestha
 twitter_username: roshan_shrestha
 github_username:  roshan2004
+google_analytics: UA-110383943-1
 
 # Build settings
 markdown: kramdown
