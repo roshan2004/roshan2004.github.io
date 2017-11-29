@@ -7,5 +7,5 @@ twitter_username: roshan_shrestha
 github_username:  roshan2004
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 theme: minima
