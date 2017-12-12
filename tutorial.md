@@ -2,12 +2,11 @@
 layout: page
 title: Tutorial
 permalink: /Tutorial/
-published: True
+published: true
 ---
 
-This is an academic blog of Roshan Shrestha.
-Hope you will like it !
-$$\zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s}$$
+## Tutorial on MD Simulations
+![MD]({{site.baseurl}}/md1.png)
 
 
 
