@@ -1,6 +1,6 @@
 ---
 layout: page
-title: VMD Guide
+title: Class Materials
 published: true
 ---
 
