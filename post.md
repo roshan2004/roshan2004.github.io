@@ -6,6 +6,15 @@ published: true
 Author: Roshan Shrestha
 Date: 'December 16, 2017'
 ---
+## HAPPY BIRTHDAY J.J. THOMSON  
+![]({{site.baseurl}}//DRVZF8IVwAUnRZC.jpg%3Alarge.jpeg)![DRVZF8IVwAUnRZC.jpg:large.jpeg]({{site.baseurl}}/DRVZF8IVwAUnRZC.jpg:large.jpeg)  
+J.J. Thomson, who discovered the electron, developed experimental techniques that led to mass spectroscopy, and trained physicists like Rutherford and Bohr, was born today on 18th December in 1856.  
+J.J. Thomson (on left) won the Nobel in Physics in 1906 when he showed electrons were particles while his son G. P. Thomson (on right) won the Nobel Prize in Physics in 1937 for showing that electrons are waves.
+
+
+
+
+
 ## Membrane disruption but no pores? Analyzing the toxicity of alpha synuclein in parkinson's disease...
   ![158571_web-1.jpg]({{site.baseurl}}/158571_web-1.jpg)
 
