@@ -45,5 +45,5 @@ cd src
 ```  
 6. Finally, type  
 ```sh
-make install
+sudo make install
 ```  
