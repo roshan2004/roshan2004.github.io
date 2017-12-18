@@ -25,60 +25,25 @@ cd NAMD_CVS-2017-03-30_Linux-x86_64-multicore
 sudo cp namd2 /usr/local/bin
 ```  
 In this way you can install NAMD in Ubuntu (LINUX)
-### VMD
-
-
-
-
-
-
-    
-
-    
-    
-
-    tar -zxvf NAMD_CVS-2017-03-30_Linux-x86_64-multicore.tar.gz
-
-    Now change directory to the extracted folder for NAMD by using this command in
-
-    cd NAMD_CVS-2017-03-30_Linux-x86_64-multicore
-
-    Now, give root access by typing
-
-    sudo su
-
-    Finally, in terminal, type
-
-    cp namd2 /usr/local/bin
-
-In this way you can install NAMD in Ubuntu (LINUX)
-
-    VMD
-
-    Download the latest 64 bit version of VMD for LINUX from
-    Extract the contents of the folder in your current directory, in my case vmd-1.9.2.bin.LINUXAMD64-RHEL5.opengl.tar.gz by using the command
-
-    tar -zxvf vmd-1.9.2.bin.LINUXAMD64-RHEL5.opengl.tar.gz
-
-    Now change directory to the extracted folder for VMD by using this command in terminal
-
-    cd vmd-1.9.2
-
-    Now, give root access by typing
-
-    sudo su
-
-    Then type
-
-    ./configure LINUXAMD64
-
-    Change the directory by using
-
-    cd src
-
-    Finally, type
-
-    make install
-
-Hence, you can easily install VMD in Ubuntu(LINUX)
-
+### VMD  
+1. Download the latest 64 bit version of VMD for LINUX [from](http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD)  
+2. Extract the contents of the folder in your current directory, in my case vmd-1.9.2.bin.LINUXAMD64-RHEL5.opengl.tar.gz by using this command in terminal  
+```sh
+tar -zxvf vmd-1.9.2.bin.LINUXAMD64-RHEL5.opengl.tar.gz
+```  
+3. Now change directory to the extracted folder for VMD by using this command in terminal  
+```sh
+cd vmd-1.9.2
+```  
+4. Then type  
+```sh
+./configure LINUXAMD64
+```  
+5. Change the directory to /src using  
+```sh
+cd src
+```  
+6. Finally, type  
+```sh
+make install
+```  
