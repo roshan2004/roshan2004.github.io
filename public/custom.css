@@ -1,0 +1,18 @@
+/* Program output. */
+.out {
+    color: darkblue;
+    font-style: italic;
+}
+
+pre.output {
+    color: MediumBlue;
+}
+pre.error {
+    color: Red;
+}
+
+/* overviw content list */
+
+ol.nonumbers {
+    list-style: none;
+}
