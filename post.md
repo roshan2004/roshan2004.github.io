@@ -6,6 +6,11 @@ published: true
 Author: Roshan Shrestha
 Date: 'December 16, 2017'
 ---
+## MERRY CHRISTMAS EVERYONE !!!  
+![DRojcXRW4AA8P6y.jpg:large.jpeg]({{site.baseurl}}/DRojcXRW4AA8P6y.jpg:large.jpeg)
+
+
+
 ## HAPPY BIRTHDAY J.J. THOMSON  
 ![]({{site.baseurl}}//DRVZF8IVwAUnRZC.jpg%3Alarge.jpeg)![DRVZF8IVwAUnRZC.jpg:large.jpeg]({{site.baseurl}}/DRVZF8IVwAUnRZC.jpg:large.jpeg)  
 J.J. Thomson, who discovered the electron, developed experimental techniques that led to mass spectroscopy, and trained physicists like Rutherford and Bohr, was born today on 18th December in 1856.  
