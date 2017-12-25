@@ -3,6 +3,10 @@ layout: page
 title: Research
 published: true
 ---
+## My Poster at International Conference On Nano-Materials and Computational Physics (ICNMCP-2017)  
+[A Molecular Dynamics Study in Structural Dynamics of a V717I Substitution in the Amyloid Precursor Protein](poster.pdf)
+
+
 ## Working on some rendering stuffs for producing publication quality image in VMD  
 ![Membrane protein system]({{site.baseurl}}/wild_10.png)
 
