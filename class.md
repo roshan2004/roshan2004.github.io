@@ -8,7 +8,10 @@ published: true
 _Here, we will use numerical and analytical method to plot the trajectory of the canon ball_  
 For numerical method, we will use the simpler Euler scheme to propagate the position x(t) and velocity v(t) at time t to $$t+\Delta t$$.  
 $$x(t+\Delta t)=x(t)+v(t).\Delta t$$ 
-$$v(t+\Delta t)=v(t)+\frac{F(t)}{m}.\Delta t$$
+$$v(t+\Delta t)=v(t)+\frac{F(t)}{m}.\Delta t$$  
+**Analytical Method**  
+$$x=x_0+v_0t+\frac{1}{2}at^2$$
+
 
 
 
