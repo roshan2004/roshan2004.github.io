@@ -10,10 +10,40 @@ For numerical method, we will use the simpler Euler scheme to propagate the posi
 $$x(t+\Delta t)=x(t)+v(t).\Delta t$$    
 $$v(t+\Delta t)=v(t)+\frac{F(t)}{m}.\Delta t$$  
 **Analytical Method**  
-$$x=x_0+v_0t+\frac{1}{2}at^2$$
+$$x=x_0+v_0t+\frac{1}{2}at^2$$  
+**PROGRAM**
+```python
+#Program to simulate the motion of a canonball fired at a height of 1m above the ground
+import matplotlib.pyplot as plt
+v=0.0      #Initial 0 velocity
+h=0.01     #dt
+x=1        #Canonball is at a distance of 1m from the ground initially     
+t=0.0
+m=2.0
+g=9.81 
+
+ta,xa,xb=[],[],[]   #xa for numerical and xb for analytical solution
+
+while x>=0.0:
+    ta.append(t)
+    xa.append(x)
+    xb.append(-0.5*g*t**2.0+1)  #Analytical solution
+    F=-m*g 
+    x=x+v*h                      #Numerical solution #update x for the first time
+    v=v+(F/m)*h
+    
+    t=t+h
+
+plt.figure()
+plt.title("Analytical and Numerical solution of the simulation of the motion of a canonball")
+plt.plot(ta,xa,label="Numerical solution")
+plt.plot(ta,xb,'ro-',label="Analytical solution")
+plt.xlabel("Time($s$)")
+plt.ylabel("Distance($m$)")
+plt.legend()
+plt.show()
+
+```
 
 
 
-
-You can find the VMD Guide that we will use extensively for our work at [VMD Guide](https://www.dropbox.com/s/sy8tdoost9ybv8b/vmd_guide.pdf?dl=0). Please download it and try to play with some VMD tools. Also, learn some TCL scripting from this [link](http://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/node4.html). For the ones working on Carbon Nanotubes, please search and download this paper on **Boron Nitride Nanotubes Selectively Permeable to Cations
-or Anions**. Also, study this [assignment](http://web.ics.purdue.edu/~kim2096/Assignment/ass3/index3a2.html) assiduously. You will get everything what you want in here. Since we shall working exclusively on the theoretical as well as practical aspects of NAMD from now on, please try to study the **CHARMM POTENTIAL**. Try to find this paper [CHARMM](http://onlinelibrary.wiley.com/doi/10.1002/0470845015.cfa007/abstract), if you need any help with using CHARMM force-field.
