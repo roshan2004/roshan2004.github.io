@@ -4,6 +4,51 @@ title: Tutorial
 permalink: /Tutorial/
 published: true
 ---
+## TCL Script to Visualize Protein in a water box  
+Despite being a huge fan of VMD, I've never liked the default visualisation settings in VMD. Though we can change it in VMD Configuration file (.vmdrc), here I have written a simple TCL script to visualize simple system like Protein in a water box. The typical example for such system can be downloaded from <a href="1aki_solv_ions.gro">here</a>.  
+**TCL Script**  
+```tcl
+##### read structure and coordinates
+mol load gro 1aki_solv_ions.gro
+
+
+#### delete initial line representation for everything
+mol delrep 0 top
+
+#### make VDW representation for ions
+mol selection {ions}
+mol color Name
+mol representation VDW 
+mol material Opaque
+mol addrep top
+
+#### make Cartoon representation for protein
+mol selection {protein}
+mol color Structure
+mol representation NewCartoon
+mol material Opaque
+mol addrep top
+
+#### make line representation for water
+mol selection {water}
+mol color Name
+mol representation Lines
+mol material Opaque
+mol addrep top
+
+#### turn off axes
+axes location off
+
+### set background white
+color Display Background 8
+
+```
+Run the above script from Extensions----->TK Console in VMD.  
+**source script.tcl**
+You can also download the above script from <a href="script.tcl">here</a>.  
+
+
+
 
 ## Installation of VMD and NAMD in Ubuntu  
 ![209055aa-1311-49bd-8793-075a79aac185.png]({{site.baseurl}}/209055aa-1311-49bd-8793-075a79aac185.png)  
