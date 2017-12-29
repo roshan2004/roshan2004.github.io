@@ -4,7 +4,8 @@ title: Research
 published: true
 ---
 ## My Poster at International Conference On Nano-Materials and Computational Physics (ICNMCP-2017)  
-[A Molecular Dynamics Study in Structural Dynamics of a V717I Substitution in the Amyloid Precursor Protein](poster_final.jpg)
+[A Molecular Dynamics Study in Structural Dynamics of a V717I Substitution in the Amyloid Precursor Protein](poster_final.jpg)  
+Update: This Poster of mine was awarded by the Third Prize.
 
 
 ## Working on some rendering stuffs for producing publication quality image in VMD  
