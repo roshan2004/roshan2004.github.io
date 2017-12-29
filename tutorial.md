@@ -46,6 +46,11 @@ color Display Background 8
 Run the above script from Extensions----->TK Console in VMD.  
 **source script.tcl**
 You can also download the above script from <a href="script.tcl">here</a>.  
+![vmdscene1.png]({{site.baseurl}}/vmdscene1.png)
+
+
+
+
 
 
 
