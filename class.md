@@ -35,6 +35,7 @@ while x>=0.0:
     t=t+h
 
 plt.figure()
+
 plt.title("Analytical and Numerical solution of the simulation of the motion of a canonball")
 plt.plot(ta,xa,label="Numerical solution")
 plt.plot(ta,xb,'ro-',label="Analytical solution")
@@ -43,7 +44,12 @@ plt.ylabel("Distance($m$)")
 plt.legend()
 plt.show()
 
-```
+```  
+**PLOT**  
+![solution.png]({{site.baseurl}}/solution.png)
+
+
+
 
 
 
