@@ -6,6 +6,11 @@ published: true
 Author: Roshan Shrestha
 Date: 'December 16, 2017'
 ---
+## If great scientists had logos............. :stuck_out_tongue:  
+![26046968_1785676761442901_4885376171335355995_n.jpg]({{site.baseurl}}/26046968_1785676761442901_4885376171335355995_n.jpg)
+
+
+
 ## MERRY CHRISTMAS EVERYONE !!!  
 ![DRojcXRW4AA8P6y.jpg:large.jpeg]({{site.baseurl}}/DRojcXRW4AA8P6y.jpg:large.jpeg)
 
