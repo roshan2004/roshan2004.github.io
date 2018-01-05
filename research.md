@@ -3,6 +3,8 @@ layout: page
 title: Research
 published: true
 ---
+## Congratulations to Biddhut and Suman  
+I would like to congratulate Mr. Buddhut lamichanne and Mr. Suman Chapagain for defending their Master's Project Work today on Jan 5, 2017. They worked with me on Molecular Dynamics Simulation. Congratulations guys !!! You deserved it.
 ## My Poster at International Conference On Nano-Materials and Computational Physics (ICNMCP-2017)  
 [A Molecular Dynamics Study in Structural Dynamics of a V717I Substitution in the Amyloid Precursor Protein](poster_final.jpg)  
 Update: This Poster of mine was awarded by the Third Prize.
