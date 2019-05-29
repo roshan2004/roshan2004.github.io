@@ -9,7 +9,7 @@ google_analytics: UA-110383943-1
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-slate
+theme: minima
 url: "https://roshan2004.github.io/"
 plugins:
   - jekyll-feed
