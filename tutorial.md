@@ -4,6 +4,24 @@ title: Tutorial
 permalink: /Tutorial/
 published: true
 ---
+## Executing a binary file without typing the full path in Linux (Ubuntu)
+Last week, I was trying to run a program for the analysis of lipid surface area in protein-membrane systems called VTMC. Unfortunately,  I had a hard time to run the program since I had to use the terminal to go to that bin folder where the program exists and had to execute the program by typing./vtmc.ubu.ifc Then, I somehow managed to learn a new technique to run the program without typing the full path in the terminal again and again which I would like to share in this blog post. 
+There are two easy techniques which I can suggest, though there are many more which you guys can comment below.
+The first one is by creating a symbolic link of the program or the file at 
+```sh
+/usr/local/bin/
+```
+For creating the symbolic link we shall type in the terminal:
+```sh
+sudo ln -s /full_path_of_your_file /usr/local/bin/name_of_new_command
+```
+Then, we will make the file executable by typing:
+```sh
+chmod +x /full/path/to/your/file
+```
+Now, we will be able to run the program any time by typing name_of_new_command in the terminal.
+The another method is by editing the .bashrc file to add the directory where the program is located.
+
 ## TCL Script to Visualize Protein in a water box  
 Despite being a huge fan of VMD, I've never liked the default visualisation settings in VMD. Though we can change it in VMD Configuration file (.vmdrc), here I have written a simple TCL script to visualize simple system like Protein in a water box. The typical example for such system can be downloaded from <a href="/docs/1aki_solv_ions.gro">here</a>.  
 **TCL Script**  
