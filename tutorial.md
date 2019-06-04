@@ -23,9 +23,9 @@ Now, we will be able to run the program any time by typing name_of_new_command i
 The another method is by editing the .bashrc file to add the directory where the program is located.
 
    1. Type gedit (or any other text editors) .bashrc in terminal
-   2. Add at the end of the .bashrc file ```sh export PATH="directory of the program":$PATH```
+   2. Add at the end of the .bashrc file ``` export PATH="directory of the program":$PATH```
    3. Save the file and quit gedit
-   4. Now, type ```shsource .bashrc``` in terminal
+   4. Now, type ```source .bashrc``` in terminal
 You shall be able to run the program now easily by typing the file’s name in the terminal. In my case, it was vtmc.ubu.ifc
 
 ## TCL Script to Visualize Protein in a water box  
