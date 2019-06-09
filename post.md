@@ -16,8 +16,9 @@ I mostly work with transmembrane protein which is such an interesting system to 
  
 
 The very first simulation we perform will have velocities that are generated for each atom from something known as a maxwell boltzmann distribution (BD). A BD is a simple function which can be used to define particle speed according to the temperature of a system and with it being a probability distribution functions every atom gets a velocity from somewhere over this distribution. Most of the atoms will get a velocity somewhere close to the mean of the BD, but some e.g., those more than 1.5 standard deviations from the mean, will get very high or very low velocities.
-
+<p align="center">
 ![Maxwell Boltzmann Distribution]({{site.baseurl}}/Figure_14_04_05.jpg)
+</p>
 
 
  
