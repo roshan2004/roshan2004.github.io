@@ -7,7 +7,7 @@ Author: Roshan Shrestha
 Date: 'December 16, 2017'
 ---
 ## Use of position restraint in Molecular Dynamics Simulation 
-![Rhodopsin_Side.jpg]({{site.baseurl}}/Rhodopsin_Side.jpg)
+![Rhodopsin_Side.jpg]({{site.baseurl}}/Rhodopsin_Side.jpg){width=250px}
 
 
 
