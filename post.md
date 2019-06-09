@@ -7,7 +7,7 @@ Author: Roshan Shrestha
 Date: 'December 16, 2017'
 ---
 ## Use of position restraint in Molecular Dynamics Simulation 
-![Rhodopsin_Side.jpg]({{site.baseurl}}/Rhodopsin_Side.jpg){width=250px}
+![Rhodopsin_Side.jpg]({{site.baseurl}}/Rhodopsin_Side.jpg)
 
 
 
@@ -24,4 +24,3 @@ The molecular dynamics integrator uses these velocities to predict the position 
  
 
 This is why we have position restraints on a protein during equilibration: to provide sufficient time for high and low particle velocities to reach the mean Boltzmann distribution particle speed whilst safe-guarding against the protein from unfolding due to initial high velocities.
-  
