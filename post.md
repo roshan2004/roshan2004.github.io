@@ -7,6 +7,9 @@ Author: Roshan Shrestha
 Date: 'December 16, 2017'
 ---
 ## Use of position restraint in Molecular Dynamics Simulation
+
+![Rhodopsin_Side.jpg]({{site.baseurl}}/Rhodopsin_Side.jpg)
+
 I mostly work with transmembrane protein which is such an interesting system to simulate. The idea behind the position restraints is very much centered around equilibrating a transmembrane protein, although it should also be applied to soluble/globular proteins (protein in water).
 
  
