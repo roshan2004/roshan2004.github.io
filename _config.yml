@@ -21,12 +21,12 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  avatar           : "roshan.png"
+  name             : "Roshan Shrestha"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "I am currently a PhD researcher at MMSB, CNRS, Lyon. My research interests are in the computational modeling of biological macromolecules and nanomaterials, employing biophysical principles and molecular dynamics simulations to understand complex molecular systems and their interactions at the nanoscale."
   location         : "Earth"
-  employer         : "Red Brick University"
+  employer         : "CNRS"
   uri              : # URL
   email            : "none@example.org" 
 
