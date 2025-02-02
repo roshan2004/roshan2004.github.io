@@ -21,7 +21,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "roshan.png"
+  avatar           : "profile.png"
   name             : "Roshan Shrestha"
   pronouns         : # example: "she/her"  
   bio              : "PhD researcher at MMSB, CNRS, Lyon."
