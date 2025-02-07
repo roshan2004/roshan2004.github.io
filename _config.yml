@@ -22,7 +22,7 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   name             : "Roshan Shrestha"
-  avatar           : "roshan.png"
+  avatar           : "profile.png"
   pronouns         : # example: "she/her"  
   bio              : "PhD researcher at MMSB, CNRS, Lyon."
   location         : "Earth"
