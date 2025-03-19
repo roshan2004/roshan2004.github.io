@@ -5,28 +5,12 @@
     <link>http://localhost:1313/tags/markdown/</link>
       <atom:link href="http://localhost:1313/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     <description>Markdown</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu_645fa481986063ef.png</url>
       <title>Markdown</title>
       <link>http://localhost:1313/tags/markdown/</link>
     </image>
-    
-    <item>
-      <title>Martini 3 model of Fullerene</title>
-      <link>http://localhost:1313/project/fullerene/</link>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/fullerene/</guid>
-      <description>&lt;p&gt;Generates a Martini 3 model of Fullerene for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Martini 3 model of Graphene</title>
-      <link>http://localhost:1313/project/graphene/</link>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/graphene/</guid>
-      <description>&lt;p&gt;Generates a Martini 3 model of both finite and infinite graphene sheet for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>🎉 Easily create your own simple yet highly customizable blog</title>
@@ -241,7 +225,7 @@
 
 
 
-&lt;div id=&#34;chart-738495261&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-893125674&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   async function fetchChartJSON() {
     console.debug(&#39;Hugo Blox fetching chart JSON...&#39;)
@@ -259,7 +243,7 @@
 
       fetchChartJSON().then(chart =&gt; {
         console.debug(&#39;Plotting chart...&#39;)
-        window.Plotly.newPlot(&#39;chart-738495261&#39;, chart.data, chart.layout, {responsive: true});
+        window.Plotly.newPlot(&#39;chart-893125674&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
