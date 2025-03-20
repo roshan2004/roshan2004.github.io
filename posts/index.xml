@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Hugo Academic CV Theme</title>
-    <link>http://localhost:1313/posts/</link>
-      <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://example.com/posts/</link>
+      <atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 20 Mar 2025 12:14:37 +0100</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu_645fa481986063ef.png</url>
+      <url>https://example.com/media/icon_hu_645fa481986063ef.png</url>
       <title>Posts</title>
-      <link>http://localhost:1313/posts/</link>
+      <link>https://example.com/posts/</link>
     </image>
     
   </channel>

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nanomaterial | Hugo Academic CV Theme</title>
-    <link>http://localhost:1313/tags/nanomaterial/</link>
-      <atom:link href="http://localhost:1313/tags/nanomaterial/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://example.com/tags/nanomaterial/</link>
+      <atom:link href="https://example.com/tags/nanomaterial/index.xml" rel="self" type="application/rss+xml" />
     <description>Nanomaterial</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu_645fa481986063ef.png</url>
+      <url>https://example.com/media/icon_hu_645fa481986063ef.png</url>
       <title>Nanomaterial</title>
-      <link>http://localhost:1313/tags/nanomaterial/</link>
+      <link>https://example.com/tags/nanomaterial/</link>
     </image>
     
     <item>
       <title>Martini 3 model of Fullerene</title>
-      <link>http://localhost:1313/project/fullerene/</link>
+      <link>https://example.com/project/fullerene/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/fullerene/</guid>
+      <guid>https://example.com/project/fullerene/</guid>
       <description>&lt;p&gt;Generates a Martini 3 model of Fullerene for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Martini 3 model of Graphene</title>
-      <link>http://localhost:1313/project/graphene/</link>
+      <link>https://example.com/project/graphene/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/graphene/</guid>
+      <guid>https://example.com/project/graphene/</guid>
       <description>&lt;p&gt;Generates a Martini 3 model of both finite and infinite graphene sheet for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).&lt;/p&gt;</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Molecular Dynamics | Hugo Academic CV Theme</title>
-    <link>http://localhost:1313/tags/molecular-dynamics/</link>
-      <atom:link href="http://localhost:1313/tags/molecular-dynamics/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://example.com/tags/molecular-dynamics/</link>
+      <atom:link href="https://example.com/tags/molecular-dynamics/index.xml" rel="self" type="application/rss+xml" />
     <description>Molecular Dynamics</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu_645fa481986063ef.png</url>
+      <url>https://example.com/media/icon_hu_645fa481986063ef.png</url>
       <title>Molecular Dynamics</title>
-      <link>http://localhost:1313/tags/molecular-dynamics/</link>
+      <link>https://example.com/tags/molecular-dynamics/</link>
     </image>
     
     <item>
       <title>Use of position restraint in Molecular Dynamics Simulation</title>
-      <link>http://localhost:1313/post/position-restraint/</link>
+      <link>https://example.com/post/position-restraint/</link>
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/position-restraint/</guid>
+      <guid>https://example.com/post/position-restraint/</guid>
       <description>&lt;p&gt;In the past, I mostly worked with transmembrane protein, which is an interesting system to simulate. The idea behind the position restraints is centered around equilibrating a transmembrane protein, although it should also be applied to soluble/globular proteins (protein in water).&lt;/p&gt;
 &lt;p&gt;The first simulation we perform will generate velocities for each atom from a maxwell Boltzmann distribution (BD). A BD is a simple function which can be used to define particle speed according to the temperature of a system and with it being a probability distribution functions every atom gets a velocity from somewhere over this distribution. Most of the atoms will get a velocity somewhere close to the mean of the BD, but some e.g., those more than 1.5 standard deviations from the mean, will get very high or very low velocities.&lt;/p&gt;
 &lt;p&gt;The molecular dynamics integrator uses these velocities to predict the position of the atoms and associated forces. Therefore, if your system contains very large velocities, we will have particles that will move much further than a particle with a velocity close to the mean from the BD. Large atom movements (associated with high velocities) normally produce large particle-particle forces and thus causing a chain of large particle movements across your system. It is very easy for secondary structures, e.g., beta-sheet and alpha-helix, to change if there are large velocities in neighboring atoms. The longer we run your system (equilibration time), the more likely that these velocities eventually smooth out to be similar to the mean velocity associated with the BD at your system temperature. You can apply position restraints on important parts of the system, e.g., the crystallographic shape of a protein, while any high velocities gradually smooth out.
@@ -26,9 +26,9 @@ This is why we have position restraints on a protein during equilibration: to pr
     
     <item>
       <title>Martini 3 model of Graphene</title>
-      <link>http://localhost:1313/project/graphene/</link>
+      <link>https://example.com/project/graphene/</link>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/graphene/</guid>
+      <guid>https://example.com/project/graphene/</guid>
       <description>&lt;p&gt;Generates a Martini 3 model of both finite and infinite graphene sheet for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).&lt;/p&gt;</description>
     </item>
     
