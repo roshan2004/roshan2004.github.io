@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Example Talk",
+    "url": "/event/example/",
+    "summary": "An example talk using Hugo Blox Builder&rsquo;s Markdown slides feature."
+  },
+  {
+    "title": "Use of position restraint in Molecular Dynamics Simulation",
+    "url": "/post/position-restraint/",
+    "summary": "Position restraints are applied during molecular dynamics simulations, especially for equilibrating transmembrane proteins. Initially, the simulation assigns velocities to atoms based on the Maxwell-Boltzmann distribution. Atoms with high velocities can cause large atomic movements, potentially disrupting secondary structures. Position restraints help stabilize the protein during equilibration, allowing velocities to smooth out to the mean distribution and preventing protein unfolding due to large initial velocities."
+  },
+  {
+    "title": "Martini 3 model of Fullerene",
+    "url": "/project/fullerene/",
+    "summary": "<p>Generates a Martini 3 model of Fullerene for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).</p>"
+  },
+  {
+    "title": "Martini 3 model of Graphene",
+    "url": "/project/graphene/",
+    "summary": "<p>Generates a Martini 3 model of both finite and infinite graphene sheet for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).</p>"
+  },
+  {
+    "title": "Projects",
+    "url": "/projects/",
+    "summary": ""
+  },
+  {
+    "title": "Martini 3 coarse-grained models for carbon nanomaterials",
+    "url": "/publication/preprint/",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum."
+  },
+  {
+    "title": "Experience",
+    "url": "/experience/",
+    "summary": ""
+  },
+  {
+    "title": "Learn JavaScript",
+    "url": "/presentation/js/",
+    "summary": "Easily learn JavaScript in 10 minutes!"
+  },
+  {
+    "title": "Learn Python",
+    "url": "/presentation/python/",
+    "summary": "Easily learn Python in 10 minutes!"
+  },
+  {
+    "title": "Interaction of Phthalates with Lipid Bilayer Membranes",
+    "url": "/publication/journal-article/",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum."
+  }
+  {
+    "title": "An example conference paper",
+    "url": "/publication/conference-paper/",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum."
+  }
+]
