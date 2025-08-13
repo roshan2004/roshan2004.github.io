@@ -1,0 +1,84 @@
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const Header = ({ activeSection, setActiveSection }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Me' },
+    { id: 'research', label: 'Research' },
+    { id: 'publications', label: 'Publications' },
+    { id: 'teaching', label: 'Teaching' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
+  return (
+    <header className="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center py-4">
+          {/* Logo/Name */}
+          <div className="text-xl font-bold">
+            <button
+              onClick={() => setActiveSection('home')}
+              className="hover:text-blue-300 transition-colors"
+            >
+              Roshan Shrestha
+            </button>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-6">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setActiveSection(item.id)}
+                className={`px-3 py-2 rounded-md transition-colors ${
+                  activeSection === item.id
+                    ? 'bg-blue-600 text-white'
+                    : 'hover:bg-slate-700 hover:text-blue-300'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className="md:hidden pb-4">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  setActiveSection(item.id);
+                  setIsMenuOpen(false);
+                }}
+                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
+                  activeSection === item.id
+                    ? 'bg-blue-600 text-white'
+                    : 'hover:bg-slate-700 hover:text-blue-300'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
+
