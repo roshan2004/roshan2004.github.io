@@ -4,21 +4,17 @@ import Home from './components/Home';
 import About from './components/About';
 import Research from './components/Research';
 import Publications from './components/Publications';
-
 import Projects from './components/Projects';
 import Code from './components/Code.jsx';
 import Blog from './components/Blog';
+import Post from './components/Post'; // NEW
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
-/*
- * Root application component.  Maintains the currently active section and
- * renders the corresponding component.  A new "blog" case has been added
- * to handle the blog section introduced for sharing posts and updates.
- */
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [activePostSlug, setActivePostSlug] = useState(null); // NEW
 
   const renderSection = () => {
     switch (activeSection) {
@@ -30,14 +26,27 @@ function App() {
         return <Research />;
       case 'publications':
         return <Publications />;
-      //case 'teaching':
-      //  return <Teaching />;
       case 'projects':
         return <Projects />;
       case 'code':
         return <Code />;
       case 'blog':
-        return <Blog />;
+        // pass callback so Blog can open a single post
+        return (
+          <Blog
+            onOpenPost={(slug) => {
+              setActivePostSlug(slug);
+              setActiveSection('post');
+            }}
+          />
+        );
+      case 'post': // NEW
+        return (
+          <Post
+            slug={activePostSlug}
+            onBack={() => setActiveSection('blog')}
+          />
+        );
       case 'contact':
         return <Contact />;
       default:
