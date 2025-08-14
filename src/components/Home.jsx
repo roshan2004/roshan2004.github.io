@@ -42,9 +42,7 @@ const Home = ({ setActiveSection }) => {
             <div className="inline-flex items-center px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium mb-8 animate-fade-in delay-100">
 🗓️ PhD defense scheduled for 23 September 2025</div>
             <p className="text-lg text-slate-700 mb-12 leading-relaxed animate-slide-up delay-200">
-              Welcome to my personal academic website. Here you can find information about my research interests,
-              publications, teaching experience, and projects. I am passionate about leveraging computational
-              modeling to understand complex biological systems and nanomaterials.
+             Welcome to my personal academic website. Here you can find information about my research interests, publications, teaching experience, and projects. My work focuses on leveraging computational modeling to understand complex biological systems and nanomaterials. Recently, I have also been exploring the integration of machine learning and artificial intelligence techniques to enhance molecular simulations, accelerate materials discovery, and gain deeper insights into biomolecular processes.
             </p>
 
             {/* CTA Buttons */}
