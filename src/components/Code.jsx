@@ -1,5 +1,8 @@
 import React from 'react';
 import { Code2, ExternalLink, Github } from 'lucide-react';
+import grapheneImage from '../assets/code/GRA_AA_CG_model.png';
+import fullereneImage from '../assets/code/fullerene_M3.png';
+
 import { Button } from '@/components/ui/button.jsx';
 
 /*
@@ -14,28 +17,25 @@ import { Button } from '@/components/ui/button.jsx';
 const Code = () => {
   // Define your technical tools and software here.  Each entry should
   // include a name, a brief description, optional tags and a URL.
+
   const tools = [
     {
-      name: 'Martini 3 CNT Model',
+      name: 'Martini 3 model of Graphene',
       description:
-        'Coarse‑grained model for carbon nanotubes compatible with the Martini 3 force field, including mapping and parameters.',
-      tags: ['Martini 3', 'CNT', 'CG MD'],
-      url: 'https://github.com/roshan2004/Martini3-CNT',
+        'Generates a Martini 3 model of both finite and infinite graphene sheet for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).',
+      tags: ['Martini 3', 'Graphene', 'CG MD'],
+      url: 'https://github.com/MoMS-MMSB/Martini3-Graphene',
+      image: grapheneImage, 
     },
     {
-      name: 'Graphene Oxide Builder',
+      name: 'Martini 3 model of Fullerene',
       description:
-        'Generate graphene‑oxide sheets with tunable oxidation patterns and export structures to GROMACS and OpenMM formats.',
-      tags: ['Graphene Oxide', 'Builder', 'GROMACS'],
-      url: 'https://github.com/roshan2004/GO-Builder',
+        'Generates a Martini 3 model of Fullerene for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).',
+      tags: ['Fullerene', 'Martini 3', 'CG MD', 'Builder', 'GROMACS'],
+      url: 'https://github.com/MoMS-MMSB/Martini3-Fullerene',
+      image: fullereneImage, 
     },
-    {
-      name: 'Psi4 + ML Workflows',
-      description:
-        'Templates for dihedral scans, dataset creation and model training pipelines bridging quantum chemistry and machine learning.',
-      tags: ['Psi4', 'PyTorch', 'QM/ML'],
-      url: 'https://github.com/roshan2004/psi4-ml-workflows',
-    },
+   
   ];
 
   return (
@@ -56,6 +56,14 @@ const Code = () => {
               className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-slate-100/60"
             >
               <div className="relative mb-6">
+                {/* If a custom image is provided for this tool, display it above the icon */}
+                {tool.image && (
+                  <img
+                    src={tool.image}
+                    alt={`${tool.name} illustration`}
+                    className="w-full h-auto rounded-xl mb-4"
+                  />
+                )}
                 <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
                   <Code2 className="w-9 h-9 text-white" />
                 </div>
