@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Roshan Shrestha — Blog</title>
+    <link>https://shrestharoshan.com/</link>
+    <description>Notes on MD, Martini 3, CNTs, HPC, and ML.</description>
+    <item>
+      <title>Setting up Martini 3 simulations for CNTs in POPC</title>
+      <link>https://shrestharoshan.com/#blog</link>
+      <pubDate>Fri, 01 Aug 2025 09:00:00 +0200</pubDate>
+      <description>System building, restraints, and lipid order analysis.</description>
+    </item>
+  </channel>
+</rss>
