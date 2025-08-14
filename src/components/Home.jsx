@@ -4,6 +4,14 @@ import { Button } from '@/components/ui/button.jsx';
 import profileImage from '../assets/profile-hero.jpg';
 import molecularDynamics from '../assets/molecular-dynamics.jpg';
 
+/*
+ * Home component
+ *
+ * This is a copy of the original home page component with one key change:
+ * the size of the "Roshan Shrestha" heading has been reduced to better fit
+ * the design.  The original used text-5xl/md:text-6xl/lg:text-7xl.  We’ve
+ * decreased each step by one size (4xl/5xl/6xl).
+ */
 const Home = ({ setActiveSection }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden">
@@ -23,27 +31,28 @@ const Home = ({ setActiveSection }) => {
               <Atom className="w-4 h-4 mr-2" />
               Computational Biophysics Researcher
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6 animate-fade-in">
-              Roshan Shrestha
+            {/* Reduced the size of the hero heading even further by one Tailwind size scale */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6 animate-fade-in">
+              Roshan Shrestha
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 mb-8 animate-slide-up">
               PhD Researcher in Computational Biophysics
             </p>
             <p className="text-lg text-slate-700 mb-12 leading-relaxed animate-slide-up delay-200">
-              Welcome to my personal academic website. Here you can find information about my research interests, 
-              publications, teaching experience, and projects. I am passionate about leveraging computational 
+              Welcome to my personal academic website. Here you can find information about my research interests,
+              publications, teaching experience, and projects. I am passionate about leveraging computational
               modeling to understand complex biological systems and nanomaterials.
             </p>
-            
+
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up delay-300">
-              <Button 
+              <Button
                 onClick={() => setActiveSection('research')}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Explore My Research <Microscope className="ml-2 w-5 h-5" />
               </Button>
-              <Button 
+              <Button
                 onClick={() => setActiveSection('contact')}
                 variant="outline"
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg transition-all duration-300 transform hover:scale-105"
@@ -57,9 +66,9 @@ const Home = ({ setActiveSection }) => {
           <div className="relative animate-fade-in delay-400">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl blur-2xl opacity-30 animate-pulse"></div>
-              <img 
-                src={profileImage} 
-                alt="Roshan Shrestha" 
+              <img
+                src={profileImage}
+                alt="Roshan Shrestha"
                 className="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg animate-bounce delay-1000">
@@ -80,7 +89,7 @@ const Home = ({ setActiveSection }) => {
             Discover my research contributions, academic publications, and professional journey
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Research Card */}
           <div className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100/50">
@@ -97,7 +106,7 @@ const Home = ({ setActiveSection }) => {
               Explore my work on biological systems and nanomaterials using computational modeling and molecular dynamics simulations.
             </p>
             <div className="text-center">
-              <Button 
+              <Button
                 onClick={() => setActiveSection('research')}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group-hover:shadow-lg transition-all duration-300"
               >
@@ -121,7 +130,7 @@ const Home = ({ setActiveSection }) => {
               Browse my published articles and works in preparation, contributing to the field of computational biophysics.
             </p>
             <div className="text-center">
-              <Button 
+              <Button
                 onClick={() => setActiveSection('publications')}
                 className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white group-hover:shadow-lg transition-all duration-300"
               >
@@ -145,7 +154,7 @@ const Home = ({ setActiveSection }) => {
               Discover more about my academic journey, educational background, and research interests in computational biophysics.
             </p>
             <div className="text-center">
-              <Button 
+              <Button
                 onClick={() => setActiveSection('about')}
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white group-hover:shadow-lg transition-all duration-300"
               >
@@ -160,4 +169,3 @@ const Home = ({ setActiveSection }) => {
 };
 
 export default Home;
-
