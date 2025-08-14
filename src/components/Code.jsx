@@ -45,7 +45,7 @@ const Code = () => {
           Code & Software
         </h1>
         <p className="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
-          Tools, libraries and scripts that support my research in computational biophysics and machine learning.
+          Codes and tools I have developed to support my research in computational biophysics and machine learning.
         </p>
 
         {/* Cards grid */}
