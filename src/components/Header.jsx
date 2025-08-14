@@ -19,8 +19,8 @@ const Header = ({ activeSection, setActiveSection }) => {
     { id: 'about', label: 'About Me' },
     { id: 'research', label: 'Research' },
     { id: 'publications', label: 'Publications' },
-    { id: 'teaching', label: 'Teaching' },
     { id: 'projects', label: 'Projects' },
+    { id: 'code', label: 'Code & Software' },
     { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' },
   ];
