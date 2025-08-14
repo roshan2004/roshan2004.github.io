@@ -38,6 +38,9 @@ const Home = ({ setActiveSection }) => {
             <p className="text-xl md:text-2xl text-slate-600 mb-8 animate-slide-up">
               PhD Researcher in Computational Biophysics
             </p>
+            {/* News Chip */}
+            <div className="inline-flex items-center px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium mb-8 animate-fade-in delay-100">
+🗓️ PhD defense scheduled for 23 September 2025</div>
             <p className="text-lg text-slate-700 mb-12 leading-relaxed animate-slide-up delay-200">
               Welcome to my personal academic website. Here you can find information about my research interests,
               publications, teaching experience, and projects. I am passionate about leveraging computational

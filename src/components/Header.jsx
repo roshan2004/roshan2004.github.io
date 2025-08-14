@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileDown } from 'lucide-react';
 
 /*
  * Header component
@@ -16,7 +16,7 @@ const Header = ({ activeSection, setActiveSection }) => {
   // section into both desktop and mobile menus.
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Me' },
+    { id: 'about', label: 'About Me' },
     { id: 'research', label: 'Research' },
     { id: 'publications', label: 'Publications' },
     { id: 'teaching', label: 'Teaching' },
@@ -35,12 +35,12 @@ const Header = ({ activeSection, setActiveSection }) => {
               onClick={() => setActiveSection('home')}
               className="hover:text-blue-300 transition-colors"
             >
-              Roshan Shrestha
+              Roshan Shrestha
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -54,6 +54,17 @@ const Header = ({ activeSection, setActiveSection }) => {
                 {item.label}
               </button>
             ))}
+
+            {/* Download CV (desktop) */}
+            <a
+              href="/Roshan_Shrestha_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white text-slate-900 hover:bg-slate-100 transition"
+            >
+              <FileDown className="w-4 h-4" />
+              Download CV
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -81,6 +92,18 @@ const Header = ({ activeSection, setActiveSection }) => {
                 {item.label}
               </button>
             ))}
+
+            {/* Download CV (mobile) */}
+            <a
+              href="/Roshan_Shrestha_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-left px-3 py-2 rounded-md bg-white text-slate-900 hover:bg-slate-100 mt-1"
+            >
+              <span className="inline-flex items-center gap-2">
+                <FileDown className="w-4 h-4" /> Download CV
+              </span>
+            </a>
           </nav>
         )}
       </div>
