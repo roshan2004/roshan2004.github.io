@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
+/*
+ * Header component
+ *
+ * Provides navigation across the different sections of the portfolio.  A
+ * "Blog" tab has been added to the navigation items so readers can access
+ * the new blog section.  The component works responsively, collapsing
+ * navigation items into a menu on smaller screens.
+ */
 const Header = ({ activeSection, setActiveSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Define the navigation items.  Adding a blog entry integrates the new
+  // section into both desktop and mobile menus.
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Me' },
+    { id: 'about', label: 'About Me' },
     { id: 'research', label: 'Research' },
     { id: 'publications', label: 'Publications' },
     { id: 'teaching', label: 'Teaching' },
     { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'blog', label: 'Blog' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   return (
@@ -24,7 +35,7 @@ const Header = ({ activeSection, setActiveSection }) => {
               onClick={() => setActiveSection('home')}
               className="hover:text-blue-300 transition-colors"
             >
-              Roshan Shrestha
+              Roshan Shrestha
             </button>
           </div>
 
@@ -46,10 +57,7 @@ const Header = ({ activeSection, setActiveSection }) => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -81,4 +89,3 @@ const Header = ({ activeSection, setActiveSection }) => {
 };
 
 export default Header;
-
