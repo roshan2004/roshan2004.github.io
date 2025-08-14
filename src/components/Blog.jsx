@@ -7,10 +7,10 @@ const Blog = () => {
 
   const posts = [
     {
-      title: "Setting up Martini 3 simulations for CNTs in POPC",
-      date: "2025-08-01",
-      tags: ["Martini", "MD", "CNT"],
-      excerpt: "Notes on system building, restraints, and analysis of lipid order.",
+      title: "Use of position restraint in Molecular Dynamics Simulation",
+      date: "2025-08-14",
+      tags: ["GROMACS", "MD", "restraint"],
+      excerpt: "Position restraints are applied during molecular dynamics simulations, especially for equilibrating transmembrane proteins. Initially, the simulation assigns velocities to atoms based on the Maxwell-Boltzmann distribution. Atoms with high velocities can cause large atomic movements, potentially disrupting secondary structures. Position restraints help stabilize the protein during equilibration, allowing velocities to smooth out to the mean distribution and preventing protein unfolding due to large initial velocities.",
       href: "#"
     },
     {
