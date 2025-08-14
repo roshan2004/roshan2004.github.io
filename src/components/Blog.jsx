@@ -1,26 +1,15 @@
 import React, { useMemo, useState } from 'react';
 import { FileText, Calendar, Tag } from 'lucide-react';
+import postsData from '../data/posts.json';
 
-const Blog = () => {
+const Blog = ({ onOpenPost }) => {
   const [query, setQuery] = useState('');
   const [activeTag, setActiveTag] = useState('All');
 
-  const posts = [
-    {
-      title: "Use of position restraint in Molecular Dynamics Simulation",
-      date: "2025-08-14",
-      tags: ["GROMACS", "MD", "restraint"],
-      excerpt: "Position restraints are applied during molecular dynamics simulations, especially for equilibrating transmembrane proteins. Initially, the simulation assigns velocities to atoms based on the Maxwell-Boltzmann distribution. Atoms with high velocities can cause large atomic movements, potentially disrupting secondary structures. Position restraints help stabilize the protein during equilibration, allowing velocities to smooth out to the mean distribution and preventing protein unfolding due to large initial velocities.",
-      href: "#"
-    },
-    {
-      title: "From MD to ML: making datasets from trajectories",
-      date: "2025-07-20",
-      tags: ["ML", "MD", "Python"],
-      excerpt: "Labeling frames, feature extraction, and avoiding leakage.",
-      href: "#"
-    }
-  ];
+  const posts = useMemo(
+    () => [...postsData].sort((a, b) => new Date(b.date) - new Date(a.date)),
+    []
+  );
 
   const tags = useMemo(() => ["All", ...Array.from(new Set(posts.flatMap(p => p.tags)))], [posts]);
 
@@ -73,11 +62,12 @@ const Blog = () => {
                   <span key={j} className="px-2 py-1 text-xs rounded-full bg-slate-100 text-slate-700">{t}</span>
                 ))}
               </div>
-              {post.href && (
-                <a href={post.href} className="text-blue-700 hover:underline inline-flex items-center gap-1">
-                  Read more <FileText className="w-4 h-4" />
-                </a>
-              )}
+              <button
+                onClick={() => onOpenPost(post.slug)}
+                className="text-blue-700 hover:underline inline-flex items-center gap-1"
+              >
+                Read more <FileText className="w-4 h-4" />
+              </button>
             </article>
           ))}
         </div>
