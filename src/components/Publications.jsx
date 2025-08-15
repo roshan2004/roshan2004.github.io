@@ -28,31 +28,24 @@ const Publications = () => {
 
   // List of works currently in preparation.  These entries do not include
   // links since they are not yet published.
-  const worksInPreparation = [
+  const Preprints = [
     {
-      title: 'Martini Coarse-Grained Models for Carbon Nanoparticles',
+      title: 'Martini 3 coarse-grained models for carbon nanomaterials',
       authors:
         'Shrestha, R., Alessandri, R., Vögele, M., de Souza, P. C. T., Marrink, S., J., & Monticelli, L.',
-      type: 'preparation',
+      type: 'preprint',
+      link: 'https://doi.org/10.26434/chemrxiv-2024-6s1wj-v3',
+
     },
-    {
-      title: 'Martini Coarse-Grained Model for Graphene oxide',
-      authors:
-        'Shrestha, R., Hilpert, C., Cambiaso, S., Bochicchio, D., Rossi G ., & Monticelli, L.',
-      type: 'preparation',
-    },
+  
     {
       title: 'Martini 3 coarse-grained model for chitosan with tunable acetylation',
       authors:
         'Cambiaso, S., Bochicchio, D., Shrestha, R., Rossi, & Monticelli, L.',
-      type: 'preparation',
+      type: 'preprint',
+      link: 'https://doi.org/10.26434/chemrxiv-2025-qb3n5',
     },
-    {
-      title: 'Simulating membrane proteins in asymmetric membranes',
-      authors:
-        'Crespi Veronica, Shrestha, R., di Meo F, & Monticelli, L.',
-      type: 'preparation',
-    },
+    
   ];
 
   // Card component for displaying a single publication.  If a link is
@@ -126,10 +119,10 @@ const Publications = () => {
             <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
               <FileText className="w-6 h-6 text-orange-600" />
             </div>
-            <h2 className="text-3xl font-semibold text-slate-900">Works in Preparation</h2>
+            <h2 className="text-3xl font-semibold text-slate-900">Preprints</h2>
           </div>
           <div className="space-y-6">
-            {worksInPreparation.map((publication, index) => (
+            {Preprints.map((publication, index) => (
               <PublicationCard key={index} publication={publication} />
             ))}
           </div>
@@ -144,8 +137,8 @@ const Publications = () => {
                 <div className="text-slate-600">Published Articles</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-orange-600 mb-2">{worksInPreparation.length}</div>
-                <div className="text-slate-600">Works in Preparation</div>
+                <div className="text-4xl font-bold text-orange-600 mb-2">{Preprints.length}</div>
+                <div className="text-slate-600">Preprints</div>
               </div>
             </div>
           </div>
