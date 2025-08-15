@@ -199,13 +199,13 @@ const Contact = () => {
             </p>
           </div>
 
-          {/* Connect */}
+          {/* Online Profiles */}
           <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
                 <Globe className="w-6 h-6 text-purple-600" />
               </div>
-              <h2 className="text-2xl font-semibold text-slate-900">Connect</h2>
+              <h2 className="text-2xl font-semibold text-slate-900">Online Profiles</h2>
             </div>
             <div className="space-y-4 text-center">
               {profiles.map((profile, idx) => (
