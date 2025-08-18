@@ -26,10 +26,18 @@ export default defineConfig({
             if (id.includes('react')) {
               return 'react-vendor'
             }
+            if (id.includes('@radix-ui')) {
+              return 'radix-ui'
+            }
+            if (id.includes('lucide-react')) {
+              return 'lucide'
+            }
             return 'vendor' // everything else from node_modules
           }
         },
       },
     },
+    // Enable build optimizations
+    minify: 'esbuild',
   },
 })

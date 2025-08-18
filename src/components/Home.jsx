@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, BookOpen, User, FlaskConical, Atom, Microscope } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
+import LazyImage from './LazyImage.jsx';
 import profileImage from '../assets/profile-hero.jpg';
 import molecularDynamics from '../assets/molecular-dynamics.jpg';
 
@@ -67,7 +68,7 @@ const Home = ({ setActiveSection }) => {
           <div className="relative animate-fade-in delay-400">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl blur-2xl opacity-30 animate-pulse"></div>
-              <img
+              <LazyImage
                 src={profileImage}
                 alt="Roshan Shrestha"
                 className="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
