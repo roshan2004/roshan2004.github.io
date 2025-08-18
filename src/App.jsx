@@ -4,7 +4,6 @@ import Home from './components/Home';
 import About from './components/About';
 import Research from './components/Research';
 import Publications from './components/Publications';
-import Projects from './components/Projects';
 import Code from './components/Code.jsx';
 import Blog from './components/Blog';
 import Post from './components/Post'; // NEW
@@ -26,8 +25,6 @@ function App() {
         return <Research />;
       case 'publications':
         return <Publications />;
-      case 'projects':
-        return <Projects />;
       case 'code':
         return <Code />;
       case 'blog':
