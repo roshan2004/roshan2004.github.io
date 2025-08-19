@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Globe, ExternalLink } from 'lucide-react';
+import {
+  GoogleScholarIcon,
+  LinkedInIcon,
+  ResearchGateIcon,
+  ORCIDIcon,
+} from '@/components/icons/brands.jsx';
 import { Button } from '@/components/ui/button.jsx';
 
 /*
@@ -18,18 +24,22 @@ const Contact = () => {
     {
       name: 'Google Scholar',
       url: 'https://scholar.google.com/citations?user=y_p39wsAAAAJ&hl=en',
+      Icon: (props) => <GoogleScholarIcon {...props} className={`w-5 h-5 ${props.className || ''}`} />,
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/roshanshrestha2004/',
+      Icon: (props) => <LinkedInIcon {...props} className={`w-5 h-5 ${props.className || ''}`} />,
     },
     {
       name: 'ResearchGate',
       url: 'https://www.researchgate.net/profile/Roshan-Shrestha-5',
+      Icon: (props) => <ResearchGateIcon {...props} className={`w-5 h-5 ${props.className || ''}`} />,
     },
     {
-      name: 'Orcid',
-      url: 'https://orcid.org/my-orcid?orcid=0000-0002-9356-5136',
+      name: 'ORCID',
+      url: 'https://orcid.org/0000-0002-9356-5136',
+      Icon: (props) => <ORCIDIcon {...props} className={`w-5 h-5 ${props.className || ''}`} />,
     },
   ];
 
@@ -236,16 +246,19 @@ const Contact = () => {
                 Online Profiles
               </h2>
             </div>
-            <div className='space-y-4 text-center'>
-              {profiles.map((profile, idx) => (
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+              {profiles.map(({ name, url, Icon }, idx) => (
                 <a
                   key={idx}
-                  href={profile.url}
+                  href={url}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center text-purple-600 hover:text-purple-800 text-lg font-medium transition-colors'
+                  aria-label={name}
+                  className='group inline-flex items-center justify-center rounded-lg border border-slate-200 px-4 py-3 text-slate-800 hover:bg-slate-50 transition-colors'
                 >
-                  {profile.name} <ExternalLink className='ml-2 w-4 h-4' />
+                  <Icon aria-hidden='true' className='mr-2' />
+                  <span className='font-medium'>{name}</span>
+                  <ExternalLink className='ml-2 w-4 h-4 text-slate-400 group-hover:text-slate-600' />
                 </a>
               ))}
             </div>
