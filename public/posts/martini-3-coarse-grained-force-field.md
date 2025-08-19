@@ -26,4 +26,4 @@ Recent studies have leveraged Martini 3 to generate long-timescale trajectories 
 
 **Official resources:**
 - [1] Martini Force Field Initiative: https://cgmartini.nl/
-- [2] Martini 3 tutorials: https://www.cgmartini.nl/index.php/martini3
+- [2] Martini 3 tutorials: https://cgmartini.nl/docs/tutorials/
