@@ -24,6 +24,6 @@ Recent studies have leveraged Martini 3 to generate long-timescale trajectories 
 - [2] Alessandri, R., Barnoud, J., Gertsen, A. S., et al. (2022). Martini 3 Coarse‑Grained Force Field: Small Molecules. Advanced Theory and Simulations, 5(1), 2100391. https://doi.org/10.1002/adts.202100391
 - [3] Marrink, S. J., Risselada, H. J., Yefimov, S., et al. (2007). The MARTINI Force Field: Coarse Grained Model for Biomolecular Simulations. Journal of Physical Chemistry B, 111(27), 7812–7824. https://doi.org/10.1021/jp071097f
 
-Official resources:
-- Martini Force Field Initiative: https://cgmartini.nl/
-- Martini 3 tutorials: https://www.cgmartini.nl/index.php/martini3
+**Official resources:**
+- [1] Martini Force Field Initiative: https://cgmartini.nl/
+- [2] Martini 3 tutorials: https://www.cgmartini.nl/index.php/martini3
