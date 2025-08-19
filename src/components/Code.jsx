@@ -23,7 +23,7 @@ const Code = () => {
       name: 'Martini 3 model of Graphene',
       description:
         'Generates a Martini 3 model of both finite and infinite graphene sheet for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).',
-      tags: ['MartiniÂ 3', 'Graphene', 'CGÂ MD'],
+      tags: ['MartiniÂ 3', 'Graphene', 'CGÂ MD'],
       url: 'https://github.com/MoMS-MMSB/Martini3-Graphene',
       image: grapheneImage, 
     },
@@ -31,7 +31,7 @@ const Code = () => {
       name: 'Martini 3 model of Fullerene',
       description:
         'Generates a Martini 3 model of Fullerene for running the molecular dynamics simulation with the Gromacs simulation package. The script outputs both the structure file (.gro) and a topology file (.itp).',
-      tags: ['Fullerene', 'MartiniÂ 3', 'CGÂ MD', 'Builder', 'GROMACS'],
+      tags: ['Fullerene', 'MartiniÂ 3', 'CGÂ MD', 'Builder', 'GROMACS'],
       url: 'https://github.com/MoMS-MMSB/Martini3-Fullerene',
       image: fullereneImage, 
     },
@@ -42,7 +42,7 @@ const Code = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-4">
-          CodeÂ &Â Software
+          CodeÂ &Â Software
         </h1>
         <p className="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
           Codes and tools I have developed to support my research in computational biophysics and machine learning.

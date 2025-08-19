@@ -16,8 +16,8 @@ const Publications = () => {
   const publishedArticles = [
     {
       title: 'Interaction of Phthalates with Lipid Bilayer Membranes',
-      authors: 'Naz, Z., Shrestha, R., Moin, S.Â T., &Â Monticelli, L.',
-      journal: 'TheÂ JournalÂ ofÂ PhysicalÂ ChemistryÂ B',
+      authors: 'Naz, Z., Shrestha, R., Moin, S.Â T., &Â Monticelli, L.',
+      journal: 'TheÂ JournalÂ ofÂ PhysicalÂ ChemistryÂ B',
       year: '2022',
       volume: '126(25)',
       pages: '4679â€“4688',
@@ -32,16 +32,16 @@ const Publications = () => {
     {
       title: 'Martini 3 coarse-grained models for carbon nanomaterials',
       authors:
-        'Shrestha, R., Alessandri, R., VÃ¶gele, M., deÂ Souza, P.Â C.Â T., Marrink, S.,Â J., &Â Monticelli, L.',
+        'Shrestha, R., Alessandri, R., VÃ¶gele, M., deÂ Souza, P.Â C.Â T., Marrink, S.,Â J., &Â Monticelli, L.',
       type: 'preprint',
       link: 'https://doi.org/10.26434/chemrxiv-2024-6s1wj-v3',
 
     },
   
     {
-      title: 'MartiniÂ 3 coarse-grained model for chitosan with tunable acetylation',
+      title: 'MartiniÂ 3 coarse-grained model for chitosan with tunable acetylation',
       authors:
-        'Cambiaso, S., Bochicchio, D., Shrestha, R., Rossi, &Â Monticelli, L.',
+        'Cambiaso, S., Bochicchio, D., Shrestha, R., Rossi, &Â Monticelli, L.',
       type: 'preprint',
       link: 'https://doi.org/10.26434/chemrxiv-2025-qb3n5',
     },
@@ -105,7 +105,7 @@ const Publications = () => {
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
               <BookOpen className="w-6 h-6 text-green-600" />
             </div>
-            <h2 className="text-3xl font-semibold text-slate-900">PublishedÂ Articles</h2>
+            <h2 className="text-3xl font-semibold text-slate-900">PublishedÂ Articles</h2>
           </div>
           <div className="space-y-6">
             {publishedArticles.map((publication, index) => (
@@ -130,11 +130,11 @@ const Publications = () => {
         {/* Statistics Section */}
         <section className="max-w-4xl mx-auto mt-16">
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-semibold text-slate-900 mb-6 text-center">PublicationÂ Statistics</h2>
+            <h2 className="text-2xl font-semibold text-slate-900 mb-6 text-center">PublicationÂ Statistics</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
                 <div className="text-4xl font-bold text-green-600 mb-2">{publishedArticles.length}</div>
-                <div className="text-slate-600">PublishedÂ Articles</div>
+                <div className="text-slate-600">PublishedÂ Articles</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-orange-600 mb-2">{Preprints.length}</div>

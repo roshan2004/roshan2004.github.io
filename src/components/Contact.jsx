@@ -56,7 +56,7 @@ const Contact = () => {
         const err = json?.errors?.map((e) => e.message).join(' ') || 'Something went wrong.';
         setStatus({ ok: false, msg: err });
       }
-    } catch (err) {
+    } catch {
       setStatus({ ok: false, msg: 'Network error. Please try again.' });
     } finally {
       setSubmitting(false);
