@@ -25,21 +25,21 @@ const Header = ({ activeSection, setActiveSection }) => {
   ];
 
   return (
-    <header className="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+    <header className='bg-slate-900 text-white shadow-lg sticky top-0 z-50'>
+      <div className='container mx-auto px-4'>
+        <div className='flex justify-between items-center py-4'>
           {/* Logo/Name */}
-          <div className="text-xl font-bold">
+          <div className='text-xl font-bold'>
             <button
               onClick={() => setActiveSection('home')}
-              className="hover:text-blue-300 transition-colors"
+              className='hover:text-blue-300 transition-colors'
             >
               Roshan Shrestha
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className='hidden md:flex items-center space-x-6'>
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -53,19 +53,20 @@ const Header = ({ activeSection, setActiveSection }) => {
                 {item.label}
               </button>
             ))}
-
-            
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button
+            className='md:hidden'
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4">
+          <nav className='md:hidden pb-4'>
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -82,8 +83,6 @@ const Header = ({ activeSection, setActiveSection }) => {
                 {item.label}
               </button>
             ))}
-
-            
           </nav>
         )}
       </div>

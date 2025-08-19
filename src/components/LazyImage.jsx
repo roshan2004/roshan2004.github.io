@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const LazyImage = ({ src, alt, className = '', placeholder = 'blur' }) => {
+const LazyImage = ({ src, alt, className = '' }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const imgRef = useRef();
@@ -27,9 +27,9 @@ const LazyImage = ({ src, alt, className = '', placeholder = 'blur' }) => {
     <div ref={imgRef} className={`relative ${className}`}>
       {/* Placeholder */}
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse rounded"></div>
+        <div className='absolute inset-0 bg-gray-200 animate-pulse rounded'></div>
       )}
-      
+
       {/* Actual image - only load when in view */}
       {isInView && (
         <img
@@ -39,7 +39,7 @@ const LazyImage = ({ src, alt, className = '', placeholder = 'blur' }) => {
             isLoaded ? 'opacity-100' : 'opacity-0'
           } ${className}`}
           onLoad={() => setIsLoaded(true)}
-          loading="lazy"
+          loading='lazy'
         />
       )}
     </div>
