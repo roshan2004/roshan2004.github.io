@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BookOpen, User, FlaskConical, Atom, Microscope } from 'lucide-react';
+import { ArrowRight, BookOpen, User, FlaskConical, Atom, Microscope, FileDown } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
 import LazyImage from './LazyImage.jsx';
 import profileImage from '../assets/profile-hero.jpg';
@@ -55,11 +55,13 @@ const Home = ({ setActiveSection }) => {
                 Explore My Research <Microscope className="ml-2 w-5 h-5" />
               </Button>
               <Button
-                onClick={() => setActiveSection('contact')}
+                asChild
                 variant="outline"
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg transition-all duration-300 transform hover:scale-105"
               >
-                Get In Touch <ArrowRight className="ml-2 w-5 h-5" />
+                <a href="/Roshan_Shrestha_CV.pdf" target="_blank" rel="noopener noreferrer">
+                  Download CV <FileDown className="ml-2 w-5 h-5" />
+                </a>
               </Button>
             </div>
           </div>

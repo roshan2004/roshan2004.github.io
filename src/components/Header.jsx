@@ -54,16 +54,7 @@ const Header = ({ activeSection, setActiveSection }) => {
               </button>
             ))}
 
-            {/* Download CV (desktop) */}
-            <a
-              href="/Roshan_Shrestha_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white text-slate-900 hover:bg-slate-100 transition"
-            >
-              <FileDown className="w-4 h-4" />
-              Download CV
-            </a>
+            
           </nav>
 
           {/* Mobile Menu Button */}
@@ -92,17 +83,7 @@ const Header = ({ activeSection, setActiveSection }) => {
               </button>
             ))}
 
-            {/* Download CV (mobile) */}
-            <a
-              href="/Roshan_Shrestha_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-left px-3 py-2 rounded-md bg-white text-slate-900 hover:bg-slate-100 mt-1"
-            >
-              <span className="inline-flex items-center gap-2">
-                <FileDown className="w-4 h-4" /> Download CV
-              </span>
-            </a>
+            
           </nav>
         )}
       </div>
