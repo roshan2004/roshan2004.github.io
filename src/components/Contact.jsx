@@ -247,7 +247,7 @@ const Contact = () => {
               </h2>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-              {profiles.map(({ name, url, Icon }, idx) => (
+              {profiles.map(({ name, url, Icon: IconEl }, idx) => (
                 <a
                   key={idx}
                   href={url}
@@ -256,7 +256,7 @@ const Contact = () => {
                   aria-label={name}
                   className='group inline-flex items-center justify-center rounded-lg border border-slate-200 px-4 py-3 text-slate-800 hover:bg-slate-50 transition-colors'
                 >
-                  <Icon aria-hidden='true' className='mr-2' />
+                  {React.createElement(IconEl, { 'aria-hidden': true, className: 'mr-2' })}
                   <span className='font-medium'>{name}</span>
                   <ExternalLink className='ml-2 w-4 h-4 text-slate-400 group-hover:text-slate-600' />
                 </a>
