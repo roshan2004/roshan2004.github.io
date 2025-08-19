@@ -3,13 +3,13 @@ import { ArrowRight, BookOpen, User, FlaskConical, Atom, Microscope } from 'luci
 import { Button } from '@/components/ui/button.jsx';
 import LazyImage from './LazyImage.jsx';
 import profileImage from '../assets/profile-hero.jpg';
-import molecularDynamics from '../assets/molecular-dynamics.jpg';
+// import molecularDynamics from '../assets/molecular-dynamics.jpg'; // removed unused import
 
 /*
  * Home component
  *
  * This is a copy of the original home page component with one key change:
- * the size of the "Roshan Shrestha" heading has been reduced to better fit
+ * the size of the "Roshan� Shrestha" heading has been reduced to better fit
  * the design.  The original used text-5xl/md:text-6xl/lg:text-7xl.  We’ve
  * decreased each step by one size (4xl/5xl/6xl).
  */
@@ -34,7 +34,7 @@ const Home = ({ setActiveSection }) => {
             </div>
             {/* Reduced the size of the hero heading even further by one Tailwind size scale */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6 animate-fade-in">
-              Roshan Shrestha
+              Roshan� Shrestha
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 mb-8 animate-slide-up">
               PhD Researcher in Computational Biophysics
