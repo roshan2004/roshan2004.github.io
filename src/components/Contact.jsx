@@ -15,10 +15,22 @@ const Contact = () => {
 
   // Define the list of online profiles so they can easily be updated.
   const profiles = [
-    { name: 'Google Scholar', url: 'https://scholar.google.com/citations?user=y_p39wsAAAAJ&hl=en' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/roshanshrestha2004/' },
-    { name: 'ResearchGate', url: 'https://www.researchgate.net/profile/Roshan-Shrestha-5' },
-    { name: 'Orcid', url: 'https://orcid.org/my-orcid?orcid=0000-0002-9356-5136' },
+    {
+      name: 'Google Scholar',
+      url: 'https://scholar.google.com/citations?user=y_p39wsAAAAJ&hl=en',
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/roshanshrestha2004/',
+    },
+    {
+      name: 'ResearchGate',
+      url: 'https://www.researchgate.net/profile/Roshan-Shrestha-5',
+    },
+    {
+      name: 'Orcid',
+      url: 'https://orcid.org/my-orcid?orcid=0000-0002-9356-5136',
+    },
   ];
 
   async function handleSubmit(e) {
@@ -44,19 +56,20 @@ const Contact = () => {
     try {
       const res = await fetch('https://formspree.io/f/xwpqzonq', {
         method: 'POST',
-        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(data),
       });
-      const json = await res.json();
 
       if (res.ok) {
         setStatus({ ok: true, msg: 'Thanks! Your message has been sent.' });
         form.reset();
       } else {
-        const err = json?.errors?.map((e) => e.message).join(' ') || 'Something went wrong.';
-        setStatus({ ok: false, msg: err });
+        setStatus({ ok: false, msg: 'Something went wrong.' });
       }
-    } catch (err) {
+    } catch {
       setStatus({ ok: false, msg: 'Network error. Please try again.' });
     } finally {
       setSubmitting(false);
@@ -64,119 +77,133 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-16">
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20'>
+      <div className='container mx-auto px-4'>
+        <h1 className='text-4xl md:text-5xl font-bold text-center text-slate-900 mb-16'>
           Contact Me
         </h1>
 
-        <div className="max-w-4xl mx-auto">
+        <div className='max-w-4xl mx-auto'>
           {/* Introduction */}
-          <div className="text-center mb-16">
-            <p className="text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
-              I am always open to discussing new research ideas, potential collaborations, or any
-              inquiries related to my work. Please feel free to reach out to me through the
-              following channels:
+          <div className='text-center mb-16'>
+            <p className='text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed'>
+              I am always open to discussing new research ideas, potential
+              collaborations, or any inquiries related to my work. Please feel
+              free to reach out to me through the following channels:
             </p>
           </div>
 
           {/* Contact Information */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className='grid md:grid-cols-2 gap-8 mb-16'>
             {/* Email */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                  <Mail className="w-6 h-6 text-blue-600" />
+            <div className='bg-white rounded-lg shadow-lg p-8'>
+              <div className='flex items-center mb-6'>
+                <div className='w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4'>
+                  <Mail className='w-6 h-6 text-blue-600' />
                 </div>
-                <h2 className="text-2xl font-semibold text-slate-900">Email</h2>
+                <h2 className='text-2xl font-semibold text-slate-900'>Email</h2>
               </div>
-              <div className="text-center">
+              <div className='text-center'>
                 <a
-                  href="mailto:roshan.shrestha@ibcp.fr"
-                  className="text-blue-600 hover:text-blue-800 text-lg font-medium transition-colors"
+                  href='mailto:roshan.shrestha@ibcp.fr'
+                  className='text-blue-600 hover:text-blue-800 text-lg font-medium transition-colors'
                 >
                   roshan.shrestha@ibcp.fr
                 </a>
-                <div className="mt-4">
+                <div className='mt-4'>
                   <Button
-                    onClick={() => window.open('mailto:roshan.shrestha@ibcp.fr', '_blank')}
-                    className="bg-blue-600 hover:bg-blue-700 text-white"
+                    onClick={() =>
+                      window.open('mailto:roshan.shrestha@ibcp.fr', '_blank')
+                    }
+                    className='bg-blue-600 hover:bg-blue-700 text-white'
                   >
-                    Send Email <ExternalLink className="ml-2 w-4 h-4" />
+                    Send Email <ExternalLink className='ml-2 w-4 h-4' />
                   </Button>
                 </div>
               </div>
             </div>
 
             {/* Professional Address */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                  <MapPin className="w-6 h-6 text-green-600" />
+            <div className='bg-white rounded-lg shadow-lg p-8'>
+              <div className='flex items-center mb-6'>
+                <div className='w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4'>
+                  <MapPin className='w-6 h-6 text-green-600' />
                 </div>
-                <h2 className="text-2xl font-semibold text-slate-900">Professional Address</h2>
+                <h2 className='text-2xl font-semibold text-slate-900'>
+                  Professional Address
+                </h2>
               </div>
-              <div className="text-center space-y-2">
-                <p className="font-medium text-slate-900">Modeling Biological Macromolecules team</p>
-                <p className="text-slate-700">7 passage du Vercors, 69367 LYON Cedex 07</p>
-                <p className="text-slate-700">Institut de Biologie et Chimie des Protéines (IBCP)</p>
-                <p className="text-slate-700">Lyon, France</p>
+              <div className='text-center space-y-2'>
+                <p className='font-medium text-slate-900'>
+                  Modeling Biological Macromolecules team
+                </p>
+                <p className='text-slate-700'>
+                  7 passage du Vercors, 69367 LYON Cedex 07
+                </p>
+                <p className='text-slate-700'>
+                  Institut de Biologie et Chimie des Protéines (IBCP)
+                </p>
+                <p className='text-slate-700'>Lyon, France</p>
               </div>
             </div>
           </div>
 
           {/* New: Direct Message Form (Formspree) */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                <Mail className="w-6 h-6 text-blue-600" />
+          <div className='bg-white rounded-lg shadow-lg p-8 mb-16'>
+            <div className='flex items-center mb-4'>
+              <div className='w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4'>
+                <Mail className='w-6 h-6 text-blue-600' />
               </div>
-              <h2 className="text-2xl font-semibold text-slate-900">Send me a message</h2>
+              <h2 className='text-2xl font-semibold text-slate-900'>
+                Send me a message
+              </h2>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className='space-y-4' noValidate>
+              <div className='grid md:grid-cols-2 gap-4'>
                 <input
-                  name="name"
-                  placeholder="Your name"
-                  className="w-full border rounded px-3 py-2"
+                  name='name'
+                  placeholder='Your name'
+                  className='w-full border rounded px-3 py-2'
                   required
-                  aria-label="Your name"
+                  aria-label='Your name'
                 />
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Your email"
-                  className="w-full border rounded px-3 py-2"
+                  type='email'
+                  name='email'
+                  placeholder='Your email'
+                  className='w-full border rounded px-3 py-2'
                   required
-                  aria-label="Your email"
+                  aria-label='Your email'
                 />
               </div>
 
               <textarea
-                name="message"
+                name='message'
                 rows={4}
-                placeholder="Message"
-                className="w-full border rounded px-3 py-2"
+                placeholder='Message'
+                className='w-full border rounded px-3 py-2'
                 required
-                aria-label="Your message"
+                aria-label='Your message'
               />
 
               {/* Honeypot (hidden) */}
               <input
-                type="text"
-                name="_gotcha"
-                className="hidden"
+                type='text'
+                name='_gotcha'
+                className='hidden'
                 tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
+                autoComplete='off'
+                aria-hidden='true'
               />
 
               <button
-                type="submit"
+                type='submit'
                 disabled={submitting}
                 className={`px-4 py-2 rounded text-white transition ${
-                  submitting ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                  submitting
+                    ? 'bg-blue-300 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700'
                 }`}
               >
                 {submitting ? 'Sending...' : 'Send'}
@@ -187,52 +214,57 @@ const Contact = () => {
             {status.msg && (
               <p
                 className={`text-sm mt-3 ${status.ok ? 'text-green-700' : 'text-red-600'}`}
-                role="status"
-                aria-live="polite"
+                role='status'
+                aria-live='polite'
               >
                 {status.msg}
               </p>
             )}
 
-            <p className="text-xs text-slate-500 mt-2">
+            <p className='text-xs text-slate-500 mt-2'>
               This form is powered by Formspree.
             </p>
           </div>
 
           {/* Online Profiles */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                <Globe className="w-6 h-6 text-purple-600" />
+          <div className='bg-white rounded-lg shadow-lg p-8 mb-16'>
+            <div className='flex items-center mb-6'>
+              <div className='w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4'>
+                <Globe className='w-6 h-6 text-purple-600' />
               </div>
-              <h2 className="text-2xl font-semibold text-slate-900">Online Profiles</h2>
+              <h2 className='text-2xl font-semibold text-slate-900'>
+                Online Profiles
+              </h2>
             </div>
-            <div className="space-y-4 text-center">
+            <div className='space-y-4 text-center'>
               {profiles.map((profile, idx) => (
                 <a
                   key={idx}
                   href={profile.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-purple-600 hover:text-purple-800 text-lg font-medium transition-colors"
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='inline-flex items-center text-purple-600 hover:text-purple-800 text-lg font-medium transition-colors'
                 >
-                  {profile.name} <ExternalLink className="ml-2 w-4 h-4" />
+                  {profile.name} <ExternalLink className='ml-2 w-4 h-4' />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Call to Action */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg p-8 text-center text-white">
-            <h2 className="text-2xl font-semibold mb-4">Let's Connect!</h2>
-            <p className="text-lg mb-6 opacity-90">
-              I look forward to hearing from you and exploring potential opportunities for collaboration.
+          <div className='bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg p-8 text-center text-white'>
+            <h2 className='text-2xl font-semibold mb-4'>Let's Connect!</h2>
+            <p className='text-lg mb-6 opacity-90'>
+              I look forward to hearing from you and exploring potential
+              opportunities for collaboration.
             </p>
             <Button
-              onClick={() => window.open('mailto:roshan.shrestha@ibcp.fr', '_blank')}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3"
+              onClick={() =>
+                window.open('mailto:roshan.shrestha@ibcp.fr', '_blank')
+              }
+              className='bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3'
             >
-              Get In Touch <Mail className="ml-2 w-5 h-5" />
+              Get In Touch <Mail className='ml-2 w-5 h-5' />
             </Button>
           </div>
         </div>

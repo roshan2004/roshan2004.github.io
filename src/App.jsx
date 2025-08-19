@@ -41,10 +41,7 @@ function App() {
         );
       case 'post': // NEW
         return (
-          <Post
-            slug={activePostSlug}
-            onBack={() => setActiveSection('blog')}
-          />
+          <Post slug={activePostSlug} onBack={() => setActiveSection('blog')} />
         );
       case 'contact':
         return <Contact />;
@@ -54,14 +51,19 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <Header activeSection={activeSection} setActiveSection={setActiveSection} />
+    <div className='min-h-screen bg-slate-50'>
+      <Header
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
       <main>
-        <Suspense fallback={
-          <div className="flex items-center justify-center min-h-[60vh]">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-          </div>
-        }>
+        <Suspense
+          fallback={
+            <div className='flex items-center justify-center min-h-[60vh]'>
+              <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600'></div>
+            </div>
+          }
+        >
           {renderSection()}
         </Suspense>
       </main>
