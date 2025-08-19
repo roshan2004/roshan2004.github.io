@@ -1,5 +1,21 @@
 [
   {
+    "title": "Martini 3 Coarse-Grained Force Field",
+    "date": "2025-08-19",
+    "excerpt": "An in-depth look at the Martini 3 coarse-grained force field, its advancements, and diverse applications in molecular dynamics simulations.",
+    "image": "/images/blog/martini3-coarse-grained-simulation.png",
+    "authors": [
+      "Roshan Shrestha"
+    ],
+    "tags": [
+      "molecular dynamics",
+      "coarse-grained",
+      "Martini 3",
+      "biophysics"
+    ],
+    "slug": "martini-3-coarse-grained-force-field"
+  },
+  {
     "slug": "use-of-position-restraint",
     "title": "Use of position restraint in Molecular Dynamics Simulation",
     "date": "2025-08-14",
