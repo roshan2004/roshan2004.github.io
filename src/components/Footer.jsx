@@ -25,15 +25,17 @@ const Footer = () => {
               <div className='flex items-center'>
                 <Mail className='w-4 h-4 mr-3 text-blue-400' />
                 <a
-                  href='mailto:roshan.shrestha@ibcp.fr'
+                  href='mailto:mail@shrestharoshan.com'
                   className='text-slate-300 hover:text-white transition-colors'
                 >
-                  roshan.shrestha@ibcp.fr
+                  mail@shrestharoshan.com
                 </a>
               </div>
               <div className='flex items-start'>
                 <MapPin className='w-4 h-4 mr-3 text-blue-400 mt-1' />
-                <span className='text-slate-300'>IBCP, Lyon, France</span>
+                <span className='text-slate-300'>
+                  Materialise HQ, Technologielaan 15, 3001 Leuven, Belgium
+                </span>
               </div>
             </div>
           </div>

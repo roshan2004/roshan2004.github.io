@@ -20,7 +20,10 @@ const Publications = () => {
         'Shrestha, R., Alessandri, R., Vögele, M., Hilpert, C., Souza, P. C., Marrink, S. J., & Monticelli, L.',
       journal: 'Journal of Chemical Theory and Computation',
       year: '2025',
+      volume: '21(18)',
+      pages: '9035–9053',
       type: 'published',
+      link: 'https://pubs.acs.org/doi/10.1021/acs.jctc.5c00923',
     },
     {
       title: 'Interaction of Phthalates with Lipid Bilayer Membranes',

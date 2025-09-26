@@ -115,15 +115,15 @@ const Contact = () => {
               </div>
               <div className='text-center'>
                 <a
-                  href='mailto:roshan.shrestha@ibcp.fr'
+                  href='mailto:mail@shrestharoshan.com'
                   className='text-blue-600 hover:text-blue-800 text-lg font-medium transition-colors'
                 >
-                  roshan.shrestha@ibcp.fr
+                  mail@shrestharoshan.com
                 </a>
                 <div className='mt-4'>
                   <Button
                     onClick={() =>
-                      window.open('mailto:roshan.shrestha@ibcp.fr', '_blank')
+                      window.open('mailto:mail@shrestharoshan.com', '_blank')
                     }
                     className='bg-blue-600 hover:bg-blue-700 text-white'
                   >
@@ -144,16 +144,10 @@ const Contact = () => {
                 </h2>
               </div>
               <div className='text-center space-y-2'>
-                <p className='font-medium text-slate-900'>
-                  Modeling Biological Macromolecules team
-                </p>
-                <p className='text-slate-700'>
-                  7 passage du Vercors, 69367 LYON Cedex 07
-                </p>
-                <p className='text-slate-700'>
-                  Institut de Biologie et Chimie des Protéines (IBCP)
-                </p>
-                <p className='text-slate-700'>Lyon, France</p>
+                <p className='font-medium text-slate-900'>Materialise HQ</p>
+                <p className='text-slate-700'>Technologielaan 15</p>
+                <p className='text-slate-700'>3001 Leuven</p>
+                <p className='text-slate-700'>Belgium</p>
               </div>
             </div>
           </div>
@@ -273,7 +267,7 @@ const Contact = () => {
             </p>
             <Button
               onClick={() =>
-                window.open('mailto:roshan.shrestha@ibcp.fr', '_blank')
+                window.open('mailto:mail@shrestharoshan.com', '_blank')
               }
               className='bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3'
             >
