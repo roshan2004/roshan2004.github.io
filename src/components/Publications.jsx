@@ -15,6 +15,14 @@ const Publications = () => {
   // array as needed.
   const publishedArticles = [
     {
+      title: 'Martini 3 coarse-grained models for carbon nanomaterials',
+      authors:
+        'Shrestha, R., Alessandri, R., Vögele, M., Hilpert, C., Souza, P. C., Marrink, S. J., & Monticelli, L.',
+      journal: 'Journal of Chemical Theory and Computation',
+      year: '2025',
+      type: 'published',
+    },
+    {
       title: 'Interaction of Phthalates with Lipid Bilayer Membranes',
       authors: 'Naz, Z., Shrestha, R., Moin, S. T., & Monticelli, L.',
       journal: 'The Journal of Physical Chemistry B',
@@ -30,13 +38,13 @@ const Publications = () => {
   // links since they are not yet published.
   const Preprints = [
     {
-      title: 'Martini 3 coarse-grained models for carbon nanomaterials',
+      title:
+        'Post-translational acylation drives folding and activity of the CyaA bacterial toxin',
       authors:
-        'Shrestha, R., Alessandri, R., Vögele, M., de Souza, P. C. T., Marrink, S., J., & Monticelli, L.',
+        'Léger, C., Hoff, S. E., Scilironi, G., Abettan, A., Shrestha, R., Frangieh, J., Deruelle, V., Carvalho, N., Raoux-Barbot, D., Duclert-Savatier, N., Bardiaux, B., Brier, S., Bontems, François, Pehau-Arnaudet, Gérard, Ladant, D., Monticelli, L., Bonomi, M., & Chenal, A.',
       type: 'preprint',
-      link: 'https://doi.org/10.26434/chemrxiv-2024-6s1wj-v3',
+      link: 'https://www.biorxiv.org/content/early/2025/09/12/2025.09.11.673628',
     },
-
     {
       title:
         'Martini 3 coarse-grained model for chitosan with tunable acetylation',
@@ -87,8 +95,10 @@ const Publications = () => {
             <p className='text-slate-600 mb-2 italic'>{publication.authors}</p>
             {isPublished && (
               <p className='text-slate-700'>
-                <span className='font-medium'>{publication.journal}</span>,{' '}
-                {publication.year}, {publication.volume}, {publication.pages}.
+                <span className='font-medium'>{publication.journal}</span>
+                {publication.year ? `, ${publication.year}` : ''}
+                {publication.volume ? `, ${publication.volume}` : ''}
+                {publication.pages ? `, ${publication.pages}` : ''}.
               </p>
             )}
           </div>
