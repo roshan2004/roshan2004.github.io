@@ -1,3 +1,16 @@
+---
+title: 'Use of position restraint in Molecular Dynamics Simulation'
+date: '2025-08-14'
+excerpt: 'Position restraints keep delicate protein structures intact during the early stages of MD equilibration, letting extreme velocities relax safely.'
+tags:
+  - GROMACS
+  - molecular dynamics
+  - equilibration
+hero: '/images/blog/distribution.png'
+authors:
+  - Roshan Shrestha
+---
+
 ![Maxwell Boltzmann distribution](/images/blog/distribution.png)
 
 In the past, I mostly worked with transmembrane protein, which is an interesting system to simulate. The idea behind the position restraints is centered around equilibrating a transmembrane protein, although it should also be applied to soluble/globular proteins (protein in water). The first simulation we perform will generate velocities for each atom from a maxwell Boltzmann distribution (BD) given by

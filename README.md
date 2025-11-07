@@ -16,6 +16,14 @@ Start a local development server:
 npm run dev
 ```
 
+### Blog metadata
+
+Markdown posts in `public/posts` include front matter (title, date, excerpt, etc.). Run the following to regenerate `src/data/posts.json` and `public/rss.xml` whenever posts change (this happens automatically before `npm run dev` and `npm run build`):
+
+```bash
+npm run sync:posts
+```
+
 ## Building
 
 Create a production build and copy `index.html` to `404.html`:
