@@ -4,11 +4,15 @@ import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
+import { useNavigate, useParams } from 'react-router-dom';
 import 'katex/dist/katex.min.css'; // <-- important
 import posts from '../data/posts.json';
 
-const Post = ({ slug, onBack }) => {
+const Post = () => {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const post = useMemo(() => posts.find((p) => p.slug === slug), [slug]);
+  const heroImage = post?.hero || post?.image;
   const [content, setContent] = useState('');
   const [error, setError] = useState('');
   const base = import.meta.env.BASE_URL || '/';
@@ -25,7 +29,10 @@ const Post = ({ slug, onBack }) => {
     return (
       <div className='min-h-screen bg-slate-50 py-16'>
         <div className='container mx-auto px-4 max-w-3xl'>
-          <button onClick={onBack} className='text-blue-700 underline mb-4'>
+          <button
+            onClick={() => navigate('/blog')}
+            className='text-blue-700 underline mb-4'
+          >
             ← Back to Blog
           </button>
           <p className='text-slate-700'>Post not found.</p>
@@ -37,18 +44,23 @@ const Post = ({ slug, onBack }) => {
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-16'>
       <div className='container mx-auto px-4 max-w-3xl bg-white rounded-xl shadow p-8'>
-        <button onClick={onBack} className='text-blue-700 underline'>
+        <button
+          onClick={() => navigate('/blog')}
+          className='text-blue-700 underline'
+        >
           ← Back to Blog
         </button>
         <h1 className='text-3xl md:text-4xl font-bold mt-4 mb-2'>
           {post.title}
         </h1>
-        <p className='text-slate-500 mb-6'>
-          {new Date(post.date).toLocaleDateString()} • {post.tags?.join(', ')}
+        <p className='text-slate-500 mb-6 flex flex-wrap gap-2 items-center'>
+          <span>{new Date(post.date).toLocaleDateString()}</span>
+          {post.readingTime && <span>• {post.readingTime} min read</span>}
+          {post.tags?.length ? <span>• {post.tags.join(', ')}</span> : null}
         </p>
 
-        {post.hero && (
-          <img src={post.hero} alt='Cover' className='rounded-lg mb-6 w-full' />
+        {heroImage && (
+          <img src={heroImage} alt='Cover' className='rounded-lg mb-6 w-full' />
         )}
 
         {error ? (

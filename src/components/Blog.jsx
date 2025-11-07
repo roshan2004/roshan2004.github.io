@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from 'react';
 import { FileText, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import postsData from '../data/posts.json';
 
-const Blog = ({ onOpenPost }) => {
+const Blog = () => {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
   const posts = useMemo(
     () => [...postsData].sort((a, b) => new Date(b.date) - new Date(a.date)),
@@ -41,9 +43,16 @@ const Blog = ({ onOpenPost }) => {
               key={i}
               className='bg-white rounded-lg shadow p-6 hover:shadow-lg transition'
             >
-              <div className='text-sm text-slate-500 mb-2 inline-flex items-center gap-1'>
-                <Calendar className='w-4 h-4' />{' '}
-                {new Date(post.date).toLocaleDateString()}
+              <div className='text-sm text-slate-500 mb-2 inline-flex items-center gap-2 flex-wrap'>
+                <span className='inline-flex items-center gap-1'>
+                  <Calendar className='w-4 h-4' />{' '}
+                  {new Date(post.date).toLocaleDateString()}
+                </span>
+                {post.readingTime && (
+                  <span aria-label={`${post.readingTime} minute read`}>
+                    • {post.readingTime} min read
+                  </span>
+                )}
               </div>
               <h2 className='text-xl font-semibold text-slate-900 mb-2'>
                 {post.title}
@@ -65,7 +74,7 @@ const Blog = ({ onOpenPost }) => {
                 )}
               </div>
               <button
-                onClick={() => onOpenPost(post.slug)}
+                onClick={() => navigate(`/blog/${post.slug}`)}
                 className='text-blue-700 hover:underline inline-flex items-center gap-1'
               >
                 Read more <FileText className='w-4 h-4' />

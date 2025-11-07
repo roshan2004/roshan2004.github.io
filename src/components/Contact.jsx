@@ -15,9 +15,16 @@ import { Button } from '@/components/ui/button.jsx';
  * links to professional profiles. It ALSO adds a Formspree contact form with
  * inline success/error feedback and a honeypot to reduce spam.
  */
+const emailPattern =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+const initialStatus = { ok: null, msg: '' };
+
 const Contact = () => {
-  const [status, setStatus] = useState({ ok: null, msg: '' });
+  const [status, setStatus] = useState(initialStatus);
   const [submitting, setSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
 
   // Define the list of online profiles so they can easily be updated.
   const profiles = [
@@ -43,10 +50,48 @@ const Contact = () => {
     },
   ];
 
+  const validateField = (name, value) => {
+    if (name === 'name' && !value.trim()) {
+      return 'Please enter your name.';
+    }
+    if (name === 'email') {
+      if (!value.trim()) return 'Please enter your email.';
+      if (!emailPattern.test(value.trim())) return 'Please enter a valid email.';
+    }
+    if (name === 'message') {
+      if (!value.trim()) return 'Please enter a message.';
+      if (value.trim().length < 20) return 'Message should be at least 20 characters.';
+    }
+    return '';
+  };
+
+  const validateForm = (formData) => {
+    const nextErrors = {};
+    Object.entries(formData).forEach(([name, value]) => {
+      const error = validateField(name, value);
+      if (error) nextErrors[name] = error;
+    });
+    return nextErrors;
+  };
+
+  const updateFieldState = (name, value) => {
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => {
+      const next = { ...prev };
+      const message = validateField(name, value);
+      if (message) {
+        next[name] = message;
+      } else {
+        delete next[name];
+      }
+      return next;
+    });
+  };
+
   async function handleSubmit(e) {
     e.preventDefault();
     setSubmitting(true);
-    setStatus({ ok: null, msg: '' });
+    setStatus(initialStatus);
 
     const form = e.currentTarget;
     // Honeypot (bots will often fill this)
@@ -55,12 +100,29 @@ const Contact = () => {
       return;
     }
 
-    const data = {
+    const formData = {
       name: form.name.value,
       email: form.email.value,
       message: form.message.value,
+    };
+
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length) {
+      setErrors(validationErrors);
+      setTouched({
+        name: true,
+        email: true,
+        message: true,
+      });
+      setStatus({ ok: false, msg: 'Please fix the highlighted fields.' });
+      setSubmitting(false);
+      return;
+    }
+
+    const payload = {
+      ...formData,
       _subject: 'New message from shrestharoshan.com',
-      _replyto: form.email.value,
+      _replyto: formData.email,
     };
 
     try {
@@ -70,11 +132,13 @@ const Contact = () => {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {
         setStatus({ ok: true, msg: 'Thanks! Your message has been sent.' });
+        setErrors({});
+        setTouched({});
         form.reset();
       } else {
         setStatus({ ok: false, msg: 'Something went wrong.' });
@@ -171,7 +235,18 @@ const Contact = () => {
                   className='w-full border rounded px-3 py-2'
                   required
                   aria-label='Your name'
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? 'name-error' : undefined}
+                  onBlur={(e) => updateFieldState(e.target.name, e.target.value)}
+                  onChange={(e) => {
+                    if (touched.name) updateFieldState(e.target.name, e.target.value);
+                  }}
                 />
+                {touched.name && errors.name && (
+                  <p id='name-error' className='text-sm text-red-600'>
+                    {errors.name}
+                  </p>
+                )}
                 <input
                   type='email'
                   name='email'
@@ -179,7 +254,18 @@ const Contact = () => {
                   className='w-full border rounded px-3 py-2'
                   required
                   aria-label='Your email'
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? 'email-error' : undefined}
+                  onBlur={(e) => updateFieldState(e.target.name, e.target.value)}
+                  onChange={(e) => {
+                    if (touched.email) updateFieldState(e.target.name, e.target.value);
+                  }}
                 />
+                {touched.email && errors.email && (
+                  <p id='email-error' className='text-sm text-red-600 md:col-span-2'>
+                    {errors.email}
+                  </p>
+                )}
               </div>
 
               <textarea
@@ -189,7 +275,18 @@ const Contact = () => {
                 className='w-full border rounded px-3 py-2'
                 required
                 aria-label='Your message'
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? 'message-error' : undefined}
+                onBlur={(e) => updateFieldState(e.target.name, e.target.value)}
+                onChange={(e) => {
+                  if (touched.message) updateFieldState(e.target.name, e.target.value);
+                }}
               />
+              {touched.message && errors.message && (
+                <p id='message-error' className='text-sm text-red-600'>
+                  {errors.message}
+                </p>
+              )}
 
               {/* Honeypot (hidden) */}
               <input
@@ -201,17 +298,15 @@ const Contact = () => {
                 aria-hidden='true'
               />
 
-              <button
+              <Button
                 type='submit'
                 disabled={submitting}
-                className={`px-4 py-2 rounded text-white transition ${
-                  submitting
-                    ? 'bg-blue-300 cursor-not-allowed'
-                    : 'bg-blue-600 hover:bg-blue-700'
+                className={`w-full md:w-auto ${
+                  submitting ? 'bg-blue-300 cursor-not-allowed text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
               >
                 {submitting ? 'Sending...' : 'Send'}
-              </button>
+              </Button>
             </form>
 
             {/* Status message */}
