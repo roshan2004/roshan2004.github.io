@@ -1,25 +1,37 @@
 [
   {
+    "slug": "martini-3-coarse-grained-force-field",
     "title": "Martini 3 Coarse-Grained Force Field",
     "date": "2025-08-19",
     "excerpt": "An in-depth look at the Martini 3 coarse-grained force field, its advancements, and diverse applications in molecular dynamics simulations.",
-    "image": "/images/blog/martini3-coarse-grained-simulation.png",
-    "authors": [
-      "Roshan Shrestha"
-    ],
     "tags": [
       "molecular dynamics",
       "coarse-grained",
       "Martini 3",
       "biophysics"
     ],
-    "slug": "martini-3-coarse-grained-force-field"
+    "authors": [
+      "Roshan Shrestha"
+    ],
+    "hero": "/images/blog/martini3-coarse-grained-simulation.png",
+    "image": "/images/blog/martini3-coarse-grained-simulation.png",
+    "readingTime": 2
   },
   {
     "slug": "use-of-position-restraint",
     "title": "Use of position restraint in Molecular Dynamics Simulation",
     "date": "2025-08-14",
-    "tags": ["GROMACS", "MD", "restraint"],
-    "excerpt": "Position restraints are applied during MD, especially for equilibrating transmembrane proteins…"
+    "excerpt": "Position restraints keep delicate protein structures intact during the early stages of MD equilibration, letting extreme velocities relax safely.",
+    "tags": [
+      "GROMACS",
+      "molecular dynamics",
+      "equilibration"
+    ],
+    "authors": [
+      "Roshan Shrestha"
+    ],
+    "hero": "/images/blog/distribution.png",
+    "image": "/images/blog/distribution.png",
+    "readingTime": 2
   }
 ]

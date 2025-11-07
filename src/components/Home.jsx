@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   ArrowRight,
   BookOpen,
@@ -8,9 +8,11 @@ import {
   Microscope,
   FileDown,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
 import LazyImage from './LazyImage.jsx';
 import profileImage from '../assets/profile-hero.jpg';
+import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion.js';
 
 /*
  * Home component
@@ -20,20 +22,33 @@ import profileImage from '../assets/profile-hero.jpg';
  * the design.  The original used text-5xl/md:text-6xl/lg:text-7xl.  We’ve
  * decreased each step by one size (4xl/5xl/6xl).
  */
-const Home = ({ setActiveSection }) => {
+const Home = () => {
+  const navigate = useNavigate();
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = profileImage;
+    return () => {
+      img.onload = null;
+    };
+  }, []);
+
+  const motionClass = (value) => (prefersReducedMotion ? '' : value);
+
   return (
-    <>
-      <title>Roshan Shrestha - Research Engineer at Materialise NV | PhD in Computational Biophysics</title>
-      <meta
-        name="description"
-        content="Welcome to Roshan Shrestha's personal academic website. Explore research, publications, teaching, and projects in computational biophysics."
-      />
-      <div className='min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden'>
+    <div className='min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden'>
       {/* Animated Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
-        <div className='absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse'></div>
-        <div className='absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse delay-1000'></div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-pink-600/10 rounded-full blur-3xl animate-pulse delay-500'></div>
+        <div
+          className={`absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl ${motionClass('animate-pulse')}`}
+        ></div>
+        <div
+          className={`absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl ${motionClass('animate-pulse delay-1000')}`}
+        ></div>
+        <div
+          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-pink-600/10 rounded-full blur-3xl ${motionClass('animate-pulse delay-500')}`}
+        ></div>
       </div>
 
       {/* Hero Section */}
@@ -41,19 +56,25 @@ const Home = ({ setActiveSection }) => {
         <div className='grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto'>
           {/* Text Content */}
           <div className='text-center lg:text-left'>
-            <div className='inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full text-sm font-medium text-blue-800 mb-6 animate-bounce'>
+            <div
+              className={`inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full text-sm font-medium text-blue-800 mb-6 ${motionClass('animate-bounce')}`}
+            >
               <Atom className='w-4 h-4 mr-2' />
               Computational Biophysics Researcher
             </div>
             {/* Reduced the size of the hero heading even further by one Tailwind size scale */}
-            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6 animate-fade-in'>
+            <h1
+              className={`text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6 ${motionClass('animate-fade-in')}`}
+            >
               Roshan Shrestha
             </h1>
-            <p className='text-xl md:text-2xl text-slate-600 mb-8 animate-slide-up'>
+            <p className={`text-xl md:text-2xl text-slate-600 mb-8 ${motionClass('animate-slide-up')}`}>
               Research Engineer at Materialise NV | PhD in Computational Biophysics
             </p>
             {/* News Chip removed post-defense */}
-            <p className='text-lg text-slate-700 mb-12 leading-relaxed animate-slide-up delay-200'>
+            <p
+              className={`text-lg text-slate-700 mb-12 leading-relaxed ${motionClass('animate-slide-up delay-200')}`}
+            >
               Welcome to my personal academic website. Here you can find
               information about my research interests, publications, teaching
               experience, and projects. My work focuses on leveraging
@@ -65,9 +86,11 @@ const Home = ({ setActiveSection }) => {
             </p>
 
             {/* CTA Buttons */}
-            <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up delay-300'>
+            <div
+              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start ${motionClass('animate-slide-up delay-300')}`}
+            >
               <Button
-                onClick={() => setActiveSection('research')}
+                onClick={() => navigate('/research')}
                 className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105'
               >
                 Explore My Research <Microscope className='ml-2 w-5 h-5' />
@@ -89,15 +112,19 @@ const Home = ({ setActiveSection }) => {
           </div>
 
           {/* Profile Image */}
-          <div className='relative animate-fade-in delay-400'>
+          <div className={`relative ${motionClass('animate-fade-in delay-400')}`}>
             <div className='relative'>
-              <div className='absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl blur-2xl opacity-30 animate-pulse'></div>
+              <div
+                className={`absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl blur-2xl opacity-30 ${motionClass('animate-pulse')}`}
+              ></div>
               <LazyImage
                 src={profileImage}
                 alt='Roshan Shrestha'
                 className='relative w-full max-w-md mx-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500'
               />
-              <div className='absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg animate-bounce delay-1000'>
+              <div
+                className={`absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg ${motionClass('animate-bounce delay-1000')}`}
+              >
                 <FlaskConical className='w-12 h-12 text-white' />
               </div>
             </div>
@@ -124,7 +151,9 @@ const Home = ({ setActiveSection }) => {
               <div className='flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300'>
                 <FlaskConical className='w-10 h-10 text-white' />
               </div>
-              <div className='absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-ping'></div>
+              <div
+                className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full ${motionClass('animate-ping')}`}
+              ></div>
             </div>
             <h3 className='text-2xl font-semibold text-slate-900 mb-4 text-center group-hover:text-blue-600 transition-colors'>
               My Research
@@ -135,7 +164,7 @@ const Home = ({ setActiveSection }) => {
             </p>
             <div className='text-center'>
               <Button
-                onClick={() => setActiveSection('research')}
+                onClick={() => navigate('/research')}
                 className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white group-hover:shadow-lg transition-all duration-300'
               >
                 Learn More{' '}
@@ -150,7 +179,9 @@ const Home = ({ setActiveSection }) => {
               <div className='flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300'>
                 <BookOpen className='w-10 h-10 text-white' />
               </div>
-              <div className='absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-ping delay-300'></div>
+              <div
+                className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full ${motionClass('animate-ping delay-300')}`}
+              ></div>
             </div>
             <h3 className='text-2xl font-semibold text-slate-900 mb-4 text-center group-hover:text-green-600 transition-colors'>
               Publications
@@ -161,7 +192,7 @@ const Home = ({ setActiveSection }) => {
             </p>
             <div className='text-center'>
               <Button
-                onClick={() => setActiveSection('publications')}
+                onClick={() => navigate('/publications')}
                 className='bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white group-hover:shadow-lg transition-all duration-300'
               >
                 View Publications{' '}
@@ -176,7 +207,9 @@ const Home = ({ setActiveSection }) => {
               <div className='flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300'>
                 <User className='w-10 h-10 text-white' />
               </div>
-              <div className='absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-ping delay-700'></div>
+              <div
+                className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full ${motionClass('animate-ping delay-700')}`}
+              ></div>
             </div>
             <h3 className='text-2xl font-semibold text-slate-900 mb-4 text-center group-hover:text-purple-600 transition-colors'>
               About Me
@@ -187,7 +220,7 @@ const Home = ({ setActiveSection }) => {
             </p>
             <div className='text-center'>
               <Button
-                onClick={() => setActiveSection('about')}
+                onClick={() => navigate('/about')}
                 className='bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white group-hover:shadow-lg transition-all duration-300'
               >
                 Read My Bio{' '}
@@ -198,7 +231,6 @@ const Home = ({ setActiveSection }) => {
         </div>
       </section>
     </div>
-  </>
   );
 };
 

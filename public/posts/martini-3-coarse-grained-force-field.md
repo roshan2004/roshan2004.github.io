@@ -1,3 +1,17 @@
+---
+title: 'Martini 3 Coarse-Grained Force Field'
+date: '2025-08-19'
+excerpt: 'An in-depth look at the Martini 3 coarse-grained force field, its advancements, and diverse applications in molecular dynamics simulations.'
+tags:
+  - molecular dynamics
+  - coarse-grained
+  - Martini 3
+  - biophysics
+authors:
+  - Roshan Shrestha
+hero: '/images/blog/martini3-coarse-grained-simulation.png'
+---
+
 ![Martini 3 Coarse-Grained Force Field](/images/blog/martini3-coarse-grained-simulation.png)
 
 Martini 3 is a coarse-grained force field designed to simulate large biomolecular and soft-matter systems efficiently while preserving essential physics. As the successor to earlier Martini versions, it offers a practical balance between speed and realism, making it well suited for membranes, proteins, nucleic acids, polymers, and complex assemblies.

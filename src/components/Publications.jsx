@@ -15,6 +15,17 @@ const Publications = () => {
   // array as needed.
   const publishedArticles = [
     {
+      title: 'Martini 3 Coarse-Grained Model for Chitosan with Tunable Acetylation',
+      authors:
+        'Cambiaso, S., Razmazma, H., Shrestha, R., Bochicchio, D., Rossi, G., & Monticelli, L.',
+      journal: 'Biomacromolecules',
+      year: '2025',
+      volume: 'Ahead of Print',
+      pages: 'In press',
+      type: 'published',
+      link: 'https://doi.org/10.1021/acs.biomac.5c00683',
+    },
+    {
       title: 'Martini 3 coarse-grained models for carbon nanomaterials',
       authors:
         'Shrestha, R., Alessandri, R., Vögele, M., Hilpert, C., Souza, P. C., Marrink, S. J., & Monticelli, L.',
@@ -47,14 +58,6 @@ const Publications = () => {
         'Léger, C., Hoff, S. E., Scilironi, G., Abettan, A., Shrestha, R., Frangieh, J., Deruelle, V., Carvalho, N., Raoux-Barbot, D., Duclert-Savatier, N., Bardiaux, B., Brier, S., Bontems, François, Pehau-Arnaudet, Gérard, Ladant, D., Monticelli, L., Bonomi, M., & Chenal, A.',
       type: 'preprint',
       link: 'https://www.biorxiv.org/content/early/2025/09/12/2025.09.11.673628',
-    },
-    {
-      title:
-        'Martini 3 coarse-grained model for chitosan with tunable acetylation',
-      authors:
-        'Cambiaso, S., Bochicchio, D., Shrestha, R., Rossi, & Monticelli, L.',
-      type: 'preprint',
-      link: 'https://doi.org/10.26434/chemrxiv-2025-qb3n5',
     },
   ];
 
