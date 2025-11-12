@@ -8,6 +8,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import 'katex/dist/katex.min.css'; // <-- important
 import posts from '../data/posts.json';
 
+// Helper function to strip frontmatter from markdown content
+const stripFrontmatter = (markdown) => {
+  // Match frontmatter between --- delimiters at the start
+  const frontmatterRegex = /^---\s*\n[\s\S]*?\n---\s*\n/;
+  return markdown.replace(frontmatterRegex, '');
+};
+
 const Post = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -20,7 +27,7 @@ const Post = () => {
     if (!post) return;
     fetch(`${base}posts/${post.slug}.md`)
       .then((res) => (res.ok ? res.text() : Promise.reject('Not found')))
-      .then(setContent)
+      .then((rawContent) => setContent(stripFrontmatter(rawContent)))
       .catch(() => setError('Could not load the post content.'));
   }, [post, base]);
 
