@@ -43,10 +43,36 @@ const Blog = () => {
               key={i}
               className='bg-white rounded-lg shadow p-6 hover:shadow-lg transition'
             >
+              <div className='text-sm text-slate-500 mb-2 inline-flex items-center gap-2 flex-wrap'>
+                <span className='inline-flex items-center gap-1'>
+                  <Calendar className='w-4 h-4' />{' '}
+                  {new Date(post.date).toLocaleDateString()}
+                </span>
+                {post.readingTime && (
+                  <span aria-label={`${post.readingTime} minute read`}>
+                    • {post.readingTime} min read
+                  </span>
+                )}
+              </div>
               <h2 className='text-xl font-semibold text-slate-900 mb-2'>
                 {post.title}
               </h2>
               <p className='text-slate-700 mb-4'>{post.excerpt}</p>
+              <div className='flex flex-wrap gap-2 mb-4'>
+                {(post.tags?.slice(0, 3) || []).map((t, j) => (
+                  <span
+                    key={j}
+                    className='px-2 py-1 text-xs rounded-full bg-slate-100 text-slate-700'
+                  >
+                    {t}
+                  </span>
+                ))}
+                {post.tags && post.tags.length > 3 && (
+                  <span className='px-2 py-1 text-xs rounded-full bg-slate-100 text-slate-700'>
+                    +{post.tags.length - 3}
+                  </span>
+                )}
+              </div>
               <button
                 onClick={() => navigate(`/blog/${post.slug}`)}
                 className='text-blue-700 hover:underline inline-flex items-center gap-1'
