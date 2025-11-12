@@ -52,12 +52,6 @@ const Post = () => {
         <h1 className='text-3xl md:text-4xl font-bold mt-4 mb-2'>
           {post.title}
         </h1>
-        <p className='text-slate-500 mb-6 flex flex-wrap gap-2 items-center'>
-          <span>{new Date(post.date).toLocaleDateString()}</span>
-          {post.readingTime && <span>• {post.readingTime} min read</span>}
-          {post.tags?.length ? <span>• {post.tags.join(', ')}</span> : null}
-        </p>
-
         {error ? (
           <p className='text-red-600'>{error}</p>
         ) : (
