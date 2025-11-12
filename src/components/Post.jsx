@@ -12,7 +12,6 @@ const Post = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const post = useMemo(() => posts.find((p) => p.slug === slug), [slug]);
-  const heroImage = post?.hero || post?.image;
   const [content, setContent] = useState('');
   const [error, setError] = useState('');
   const base = import.meta.env.BASE_URL || '/';
@@ -58,10 +57,6 @@ const Post = () => {
           {post.readingTime && <span>• {post.readingTime} min read</span>}
           {post.tags?.length ? <span>• {post.tags.join(', ')}</span> : null}
         </p>
-
-        {heroImage && (
-          <img src={heroImage} alt='Cover' className='rounded-lg mb-6 w-full' />
-        )}
 
         {error ? (
           <p className='text-red-600'>{error}</p>
