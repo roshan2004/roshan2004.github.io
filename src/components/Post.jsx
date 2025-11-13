@@ -33,36 +33,36 @@ const Post = () => {
 
   if (!post) {
     return (
-      <div className='min-h-screen bg-slate-50 py-16'>
+      <div className='min-h-screen bg-slate-50 dark:bg-slate-900 py-16 transition-colors'>
         <div className='container mx-auto px-4 max-w-3xl'>
           <button
             onClick={() => navigate('/blog')}
-            className='text-blue-700 underline mb-4'
+            className='text-blue-700 dark:text-blue-400 underline mb-4'
           >
             ← Back to Blog
           </button>
-          <p className='text-slate-700'>Post not found.</p>
+          <p className='text-slate-700 dark:text-slate-300'>Post not found.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-16'>
-      <div className='container mx-auto px-4 max-w-3xl bg-white rounded-xl shadow p-8'>
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 py-16 transition-colors'>
+      <div className='container mx-auto px-4 max-w-3xl bg-white dark:bg-slate-800 rounded-xl shadow dark:shadow-slate-900 p-8'>
         <button
           onClick={() => navigate('/blog')}
-          className='text-blue-700 underline'
+          className='text-blue-700 dark:text-blue-400 underline'
         >
           ← Back to Blog
         </button>
-        <h1 className='text-3xl md:text-4xl font-bold mt-4 mb-2'>
+        <h1 className='text-3xl md:text-4xl font-bold mt-4 mb-2 text-slate-900 dark:text-white'>
           {post.title}
         </h1>
         {error ? (
-          <p className='text-red-600'>{error}</p>
+          <p className='text-red-600 dark:text-red-400'>{error}</p>
         ) : (
-          <article className='prose max-w-none'>
+          <article className='prose dark:prose-invert max-w-none'>
             <ReactMarkdown
               remarkPlugins={[remarkGfm, remarkMath]}
               rehypePlugins={[rehypeKatex]}
