@@ -12,9 +12,9 @@ const Footer = () => {
           <div>
             <h3 className='text-xl font-semibold mb-4'>Roshan Shrestha</h3>
             <p className='text-slate-300 leading-relaxed'>
-              PhD Researcher in Computational Biophysics, specializing in
-              molecular dynamics simulations and computational modeling of
-              biological systems and nanomaterials.
+              PhD in Computational Biophysics, specializing in
+              molecular dynamics simulations and coarse-grained modeling of
+              biological systems and carbon-based nanomaterials.
             </p>
           </div>
 
