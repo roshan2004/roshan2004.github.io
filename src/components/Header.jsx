@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import DarkModeToggle from './DarkModeToggle';
 
 /*
  * Header component
@@ -29,7 +30,7 @@ const Header = () => {
     'px-3 py-2 rounded-md transition-colors hover:bg-slate-700 hover:text-blue-300';
 
   return (
-    <header className='bg-slate-900 text-white shadow-lg sticky top-0 z-50'>
+    <header className='bg-slate-900 dark:bg-slate-950 text-white shadow-lg sticky top-0 z-50 transition-colors'>
       <div className='container mx-auto px-4'>
         <div className='flex justify-between items-center py-4'>
           {/* Logo/Name */}
@@ -55,15 +56,18 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
+            <DarkModeToggle />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className='md:hidden'
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button and Dark Mode Toggle */}
+          <div className='md:hidden flex items-center gap-2'>
+            <DarkModeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

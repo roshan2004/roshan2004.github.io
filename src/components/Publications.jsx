@@ -68,23 +68,23 @@ const Publications = () => {
   const PublicationCard = ({ publication }) => {
     const isPublished = publication.type === 'published';
     return (
-      <div className='bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow'>
+      <div className='bg-white dark:bg-slate-800 rounded-lg shadow-lg dark:shadow-slate-900 p-6 hover:shadow-xl transition-shadow'>
         <div className='flex items-start space-x-4'>
           <div
             className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${
-              isPublished ? 'bg-green-100' : 'bg-orange-100'
+              isPublished ? 'bg-green-100 dark:bg-green-900' : 'bg-orange-100 dark:bg-orange-900'
             }`}
           >
             {isPublished ? (
               <BookOpen
-                className={`w-6 h-6 ${isPublished ? 'text-green-600' : 'text-orange-600'}`}
+                className={`w-6 h-6 ${isPublished ? 'text-green-600 dark:text-green-400' : 'text-orange-600 dark:text-orange-400'}`}
               />
             ) : (
-              <Clock className='w-6 h-6 text-orange-600' />
+              <Clock className='w-6 h-6 text-orange-600 dark:text-orange-400' />
             )}
           </div>
           <div className='flex-grow'>
-            <h3 className='text-xl font-semibold text-blue-600 mb-2 hover:text-blue-800 transition-colors'>
+            <h3 className='text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2 hover:text-blue-800 dark:hover:text-blue-300 transition-colors'>
               {publication.link ? (
                 <a
                   href={publication.link}
@@ -98,9 +98,9 @@ const Publications = () => {
                 publication.title
               )}
             </h3>
-            <p className='text-slate-600 mb-2 italic'>{publication.authors}</p>
+            <p className='text-slate-600 dark:text-slate-400 mb-2 italic'>{publication.authors}</p>
             {isPublished && (
-              <p className='text-slate-700'>
+              <p className='text-slate-700 dark:text-slate-300'>
                 <span className='font-medium'>{publication.journal}</span>
                 {publication.year ? `, ${publication.year}` : ''}
                 {publication.volume ? `, ${publication.volume}` : ''}
@@ -114,18 +114,18 @@ const Publications = () => {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20'>
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 py-20 transition-colors'>
       <div className='container mx-auto px-4'>
-        <h1 className='text-4xl md:text-5xl font-bold text-center text-slate-900 mb-16'>
+        <h1 className='text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-16'>
           Publications
         </h1>
         {/* Published Articles Section */}
         <section className='max-w-4xl mx-auto mb-16'>
           <div className='flex items-center mb-8'>
-            <div className='w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4'>
-              <BookOpen className='w-6 h-6 text-green-600' />
+            <div className='w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4'>
+              <BookOpen className='w-6 h-6 text-green-600 dark:text-green-400' />
             </div>
-            <h2 className='text-3xl font-semibold text-slate-900'>
+            <h2 className='text-3xl font-semibold text-slate-900 dark:text-white'>
               Published Articles
             </h2>
           </div>
@@ -138,10 +138,10 @@ const Publications = () => {
         {/* Works in Preparation Section */}
         <section className='max-w-4xl mx-auto'>
           <div className='flex items-center mb-8'>
-            <div className='w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4'>
-              <FileText className='w-6 h-6 text-orange-600' />
+            <div className='w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-4'>
+              <FileText className='w-6 h-6 text-orange-600 dark:text-orange-400' />
             </div>
-            <h2 className='text-3xl font-semibold text-slate-900'>Preprints</h2>
+            <h2 className='text-3xl font-semibold text-slate-900 dark:text-white'>Preprints</h2>
           </div>
           <div className='space-y-6'>
             {Preprints.map((publication, index) => (
@@ -151,22 +151,22 @@ const Publications = () => {
         </section>
         {/* Statistics Section */}
         <section className='max-w-4xl mx-auto mt-16'>
-          <div className='bg-white rounded-lg shadow-lg p-8'>
-            <h2 className='text-2xl font-semibold text-slate-900 mb-6 text-center'>
+          <div className='bg-white dark:bg-slate-800 rounded-lg shadow-lg dark:shadow-slate-900 p-8'>
+            <h2 className='text-2xl font-semibold text-slate-900 dark:text-white mb-6 text-center'>
               Publication Statistics
             </h2>
             <div className='grid md:grid-cols-2 gap-8'>
               <div className='text-center'>
-                <div className='text-4xl font-bold text-green-600 mb-2'>
+                <div className='text-4xl font-bold text-green-600 dark:text-green-400 mb-2'>
                   {publishedArticles.length}
                 </div>
-                <div className='text-slate-600'>Published Articles</div>
+                <div className='text-slate-600 dark:text-slate-400'>Published Articles</div>
               </div>
               <div className='text-center'>
-                <div className='text-4xl font-bold text-orange-600 mb-2'>
+                <div className='text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2'>
                   {Preprints.length}
                 </div>
-                <div className='text-slate-600'>Preprints</div>
+                <div className='text-slate-600 dark:text-slate-400'>Preprints</div>
               </div>
             </div>
           </div>
