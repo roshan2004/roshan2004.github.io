@@ -7,12 +7,31 @@ import {
   Atom,
   Dna,
   Zap,
+  Tag,
 } from 'lucide-react';
 import molecularDynamics from '../assets/molecular-dynamics.jpg';
 import vmdVisualization from '../assets/vmd-visualization.png';
 import computationalBiology from '../assets/computational-biology.png';
 
 const Research = () => {
+  // Research keywords/tags for SEO and quick overview
+  const researchKeywords = [
+    { text: 'Molecular Dynamics', color: 'blue' },
+    { text: 'Coarse-Grained Modeling', color: 'purple' },
+    { text: 'Martini Force Field', color: 'indigo' },
+    { text: 'Computational Biophysics', color: 'green' },
+    { text: 'Protein-Lipid Interactions', color: 'cyan' },
+    { text: 'Free Energy Calculations', color: 'pink' },
+    { text: 'Umbrella Sampling', color: 'orange' },
+    { text: 'Metadynamics', color: 'red' },
+    { text: 'Nanomaterials', color: 'teal' },
+    { text: 'Membrane Proteins', color: 'violet' },
+    { text: 'GROMACS', color: 'blue' },
+    { text: 'VMD', color: 'emerald' },
+    { text: 'Python', color: 'yellow' },
+    { text: 'Data Analysis', color: 'slate' },
+  ];
+
   const researchInterests = [
     {
       text: 'Computational modeling of biological systems',
@@ -44,8 +63,28 @@ const Research = () => {
     },
   ];
 
+  // Helper function to get color classes for keywords
+  const getKeywordColorClass = (color) => {
+    const colorMap = {
+      blue: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-800',
+      purple: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-800',
+      indigo: 'bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800 hover:bg-indigo-200 dark:hover:bg-indigo-800',
+      green: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800 hover:bg-green-200 dark:hover:bg-green-800',
+      cyan: 'bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800 hover:bg-cyan-200 dark:hover:bg-cyan-800',
+      pink: 'bg-pink-100 dark:bg-pink-900 text-pink-700 dark:text-pink-300 border-pink-200 dark:border-pink-800 hover:bg-pink-200 dark:hover:bg-pink-800',
+      orange: 'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800 hover:bg-orange-200 dark:hover:bg-orange-800',
+      red: 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 border-red-200 dark:border-red-800 hover:bg-red-200 dark:hover:bg-red-800',
+      teal: 'bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800 hover:bg-teal-200 dark:hover:bg-teal-800',
+      violet: 'bg-violet-100 dark:bg-violet-900 text-violet-700 dark:text-violet-300 border-violet-200 dark:border-violet-800 hover:bg-violet-200 dark:hover:bg-violet-800',
+      emerald: 'bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800 hover:bg-emerald-200 dark:hover:bg-emerald-800',
+      yellow: 'bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800 hover:bg-yellow-200 dark:hover:bg-yellow-800',
+      slate: 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700',
+    };
+    return colorMap[color] || colorMap.blue;
+  };
+
   return (
-    <div className='min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20 relative overflow-hidden'>
+    <div className='min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 relative overflow-hidden transition-colors'>
       {/* Animated Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-purple-600/10 rounded-full blur-3xl animate-pulse'></div>
@@ -53,29 +92,53 @@ const Research = () => {
       </div>
 
       <div className='container mx-auto px-4 relative z-10'>
-        <div className='text-center mb-16 animate-fade-in'>
-          <h1 className='text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6'>
+        <div className='text-center mb-12 animate-fade-in'>
+          <h1 className='text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-300 bg-clip-text text-transparent mb-6'>
             Research
           </h1>
-          <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
+          <p className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto'>
             Exploring the frontiers of computational biophysics and molecular
             dynamics
           </p>
         </div>
 
+        {/* Research Keywords Section */}
+        <section className='max-w-6xl mx-auto mb-16 animate-slide-up delay-100'>
+          <div className='bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-slate-200/50 dark:border-slate-700/50'>
+            <div className='flex items-center justify-center mb-6'>
+              <Tag className='w-6 h-6 text-blue-600 dark:text-blue-400 mr-3' />
+              <h2 className='text-2xl font-semibold text-slate-900 dark:text-white'>
+                Research Keywords
+              </h2>
+            </div>
+            <div className='flex flex-wrap gap-3 justify-center'>
+              {researchKeywords.map((keyword, index) => (
+                <span
+                  key={index}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 transform hover:scale-105 hover:shadow-md ${getKeywordColorClass(
+                    keyword.color
+                  )}`}
+                >
+                  {keyword.text}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Overview Section */}
         <section className='max-w-6xl mx-auto mb-20 animate-slide-up delay-200'>
           <div className='grid lg:grid-cols-2 gap-12 items-center'>
-            <div className='bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-blue-100/50'>
+            <div className='bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-blue-100/50 dark:border-slate-700/50'>
               <div className='flex items-center mb-6'>
                 <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4'>
                   <Microscope className='w-8 h-8 text-white' />
                 </div>
-                <h2 className='text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+                <h2 className='text-3xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent'>
                   Overview
                 </h2>
               </div>
-              <p className='text-lg text-slate-700 leading-relaxed'>
+              <p className='text-lg text-slate-700 dark:text-slate-300 leading-relaxed'>
                 I am a PhD student specializing in Computational Biophysics with
                 a primary focus on the computational modeling of biological
                 systems and nanomaterials. My research aims to leverage advanced
