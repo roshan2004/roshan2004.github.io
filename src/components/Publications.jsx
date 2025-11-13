@@ -1,6 +1,5 @@
 import React from 'react';
-import { BookOpen, FileText, Clock, Quote } from 'lucide-react';
-import citationsData from '../data/citations.json';
+import { BookOpen, FileText, Clock } from 'lucide-react';
 
 /*
  * Publications component
@@ -10,21 +9,6 @@ import citationsData from '../data/citations.json';
  * visitors can click through to read the paper.  The PublicationCard
  * component wraps titles with an anchor element whenever a link is provided.
  */
-
-// Helper function to extract DOI from URL
-const extractDoi = (url) => {
-  if (!url) return null;
-  const match = url.match(/10\.\d{4,}(?:\.\d+)*\/[^\s]+/);
-  return match ? match[0] : null;
-};
-
-// Helper function to get citation count for a publication
-const getCitationCount = (link) => {
-  const doi = extractDoi(link);
-  if (!doi || !citationsData || !citationsData[doi]) return null;
-  return citationsData[doi].citationCount;
-};
-
 const Publications = () => {
   // List of published articles.  Each entry contains bibliographic details
   // and a link to the publication.  Additional articles can be added to this
@@ -83,8 +67,6 @@ const Publications = () => {
   // depending on whether the article is published or in preparation.
   const PublicationCard = ({ publication }) => {
     const isPublished = publication.type === 'published';
-    const citationCount = getCitationCount(publication.link);
-
     return (
       <div className='bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow'>
         <div className='flex items-start space-x-4'>
@@ -124,13 +106,6 @@ const Publications = () => {
                 {publication.volume ? `, ${publication.volume}` : ''}
                 {publication.pages ? `, ${publication.pages}` : ''}.
               </p>
-            )}
-            {citationCount !== null && citationCount !== undefined && (
-              <div className='flex items-center mt-3 text-sm text-slate-600'>
-                <Quote className='w-4 h-4 mr-1' />
-                <span className='font-medium'>{citationCount}</span>
-                <span className='ml-1'>citation{citationCount !== 1 ? 's' : ''}</span>
-              </div>
             )}
           </div>
         </div>
@@ -180,7 +155,7 @@ const Publications = () => {
             <h2 className='text-2xl font-semibold text-slate-900 mb-6 text-center'>
               Publication Statistics
             </h2>
-            <div className='grid md:grid-cols-3 gap-8'>
+            <div className='grid md:grid-cols-2 gap-8'>
               <div className='text-center'>
                 <div className='text-4xl font-bold text-green-600 mb-2'>
                   {publishedArticles.length}
@@ -192,15 +167,6 @@ const Publications = () => {
                   {Preprints.length}
                 </div>
                 <div className='text-slate-600'>Preprints</div>
-              </div>
-              <div className='text-center'>
-                <div className='text-4xl font-bold text-blue-600 mb-2'>
-                  {Object.values(citationsData || {}).reduce(
-                    (sum, data) => sum + (data.citationCount || 0),
-                    0
-                  )}
-                </div>
-                <div className='text-slate-600'>Total Citations</div>
               </div>
             </div>
           </div>
