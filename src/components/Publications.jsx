@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, FileText, Clock } from 'lucide-react';
+import { BookOpen, FileText, Clock, GraduationCap, ExternalLink } from 'lucide-react';
 
 /*
  * Publications component
@@ -9,6 +9,10 @@ import { BookOpen, FileText, Clock } from 'lucide-react';
  * visitors can click through to read the paper.  The PublicationCard
  * component wraps titles with an anchor element whenever a link is provided.
  */
+
+// Google Scholar profile URL
+const GOOGLE_SCHOLAR_URL = 'https://scholar.google.com/citations?user=y_p39wsAAAAJ&hl=en';
+
 const Publications = () => {
   // List of published articles.  Each entry contains bibliographic details
   // and a link to the publication.  Additional articles can be added to this
@@ -116,9 +120,24 @@ const Publications = () => {
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 py-20 transition-colors'>
       <div className='container mx-auto px-4'>
-        <h1 className='text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-16'>
+        <h1 className='text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-8'>
           Publications
         </h1>
+
+        {/* Google Scholar Profile Badge */}
+        <div className='flex justify-center mb-16'>
+          <a
+            href={GOOGLE_SCHOLAR_URL}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105'
+          >
+            <GraduationCap className='w-6 h-6' />
+            <span className='font-semibold'>View on Google Scholar</span>
+            <ExternalLink className='w-4 h-4' />
+          </a>
+        </div>
+
         {/* Published Articles Section */}
         <section className='max-w-4xl mx-auto mb-16'>
           <div className='flex items-center mb-8'>
