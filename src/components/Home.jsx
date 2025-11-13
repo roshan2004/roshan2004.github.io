@@ -7,6 +7,10 @@ import {
   Atom,
   Microscope,
   FileDown,
+  Newspaper,
+  Calendar,
+  Award,
+  Presentation,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
@@ -36,8 +40,36 @@ const Home = () => {
 
   const motionClass = (value) => (prefersReducedMotion ? '' : value);
 
+  // News and Updates items - Add your latest news here
+  const newsItems = [
+    {
+      type: 'publication',
+      icon: <BookOpen className='w-5 h-5' />,
+      title: 'Paper Published in Biomacromolecules',
+      description: 'Martini 3 Coarse-Grained Model for Chitosan with Tunable Acetylation',
+      date: 'November 2024',
+      color: 'blue',
+    },
+    {
+      type: 'publication',
+      icon: <BookOpen className='w-5 h-5' />,
+      title: 'Paper Published in JCTC',
+      description: 'Martini 3 coarse-grained models for carbon nanomaterials',
+      date: 'September 2024',
+      color: 'green',
+    },
+    {
+      type: 'award',
+      icon: <Award className='w-5 h-5' />,
+      title: 'PhD Defense Successfully Completed',
+      description: 'Successfully defended PhD thesis in Computational Biophysics',
+      date: 'October 2024',
+      color: 'purple',
+    },
+  ];
+
   return (
-    <div className='min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden'>
+    <div className='min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 relative overflow-hidden transition-colors'>
       {/* Animated Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div
@@ -64,16 +96,16 @@ const Home = () => {
             </div>
             {/* Reduced the size of the hero heading even further by one Tailwind size scale */}
             <h1
-              className={`text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6 ${motionClass('animate-fade-in')}`}
+              className={`text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-300 dark:to-purple-300 bg-clip-text text-transparent mb-6 ${motionClass('animate-fade-in')}`}
             >
               Roshan Shrestha
             </h1>
-            <p className={`text-xl md:text-2xl text-slate-600 mb-8 ${motionClass('animate-slide-up')}`}>
+            <p className={`text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 ${motionClass('animate-slide-up')}`}>
               Research Engineer at Materialise NV | PhD in Computational Biophysics
             </p>
             {/* News Chip removed post-defense */}
             <p
-              className={`text-lg text-slate-700 mb-12 leading-relaxed ${motionClass('animate-slide-up delay-200')}`}
+              className={`text-lg text-slate-700 dark:text-slate-300 mb-12 leading-relaxed ${motionClass('animate-slide-up delay-200')}`}
             >
               Welcome to my personal academic website. Here you can find
               information about my research interests, publications, teaching
@@ -132,13 +164,68 @@ const Home = () => {
         </div>
       </section>
 
+      {/* News & Updates Section */}
+      <section className='container mx-auto px-4 py-16 relative z-10'>
+        <div className='max-w-6xl mx-auto'>
+          <div className='text-center mb-12'>
+            <div className='inline-flex items-center gap-2 mb-4'>
+              <Newspaper className='w-8 h-8 text-blue-600 dark:text-blue-400' />
+              <h2 className='text-4xl font-bold bg-gradient-to-r from-slate-900 to-blue-900 dark:from-white dark:to-blue-300 bg-clip-text text-transparent'>
+                Latest News & Updates
+              </h2>
+            </div>
+            <p className='text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto'>
+              Recent achievements, publications, and milestones
+            </p>
+          </div>
+
+          <div className='grid md:grid-cols-3 gap-6'>
+            {newsItems.map((item, index) => {
+              const colorClasses = {
+                blue: 'from-blue-500 to-cyan-600 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800',
+                green: 'from-green-500 to-emerald-600 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800',
+                purple: 'from-purple-500 to-pink-600 bg-purple-50 dark:bg-purple-900/20 border-purple-200 dark:border-purple-800',
+                orange: 'from-orange-500 to-red-600 bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800',
+              };
+
+              return (
+                <div
+                  key={index}
+                  className={`group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-lg border-2 ${
+                    colorClasses[item.color]?.split(' ').slice(2).join(' ') || colorClasses.blue.split(' ').slice(2).join(' ')
+                  } hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6`}
+                >
+                  <div
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${
+                      colorClasses[item.color]?.split(' ').slice(0, 2).join(' ') || colorClasses.blue.split(' ').slice(0, 2).join(' ')
+                    } text-white mb-4 group-hover:scale-110 transition-transform`}
+                  >
+                    {item.icon}
+                  </div>
+                  <div className='flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-3'>
+                    <Calendar className='w-4 h-4' />
+                    <span>{item.date}</span>
+                  </div>
+                  <h3 className='text-lg font-semibold text-slate-900 dark:text-white mb-2'>
+                    {item.title}
+                  </h3>
+                  <p className='text-slate-600 dark:text-slate-400 text-sm leading-relaxed'>
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Quick Links Section */}
       <section className='container mx-auto px-4 pb-20 relative z-10'>
         <div className='text-center mb-16'>
-          <h2 className='text-4xl font-bold bg-gradient-to-r from-slate-900 to-blue-900 bg-clip-text text-transparent mb-4'>
+          <h2 className='text-4xl font-bold bg-gradient-to-r from-slate-900 to-blue-900 dark:from-white dark:to-blue-300 bg-clip-text text-transparent mb-4'>
             Explore My Work
           </h2>
-          <p className='text-lg text-slate-600 max-w-2xl mx-auto'>
+          <p className='text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto'>
             Discover my research contributions, academic publications, and
             professional journey
           </p>
@@ -146,7 +233,7 @@ const Home = () => {
 
         <div className='grid md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
           {/* Research Card */}
-          <div className='group bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100/50'>
+          <div className='group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100/50 dark:border-slate-700/50'>
             <div className='relative mb-6'>
               <div className='flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300'>
                 <FlaskConical className='w-10 h-10 text-white' />
@@ -155,10 +242,10 @@ const Home = () => {
                 className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full ${motionClass('animate-ping')}`}
               ></div>
             </div>
-            <h3 className='text-2xl font-semibold text-slate-900 mb-4 text-center group-hover:text-blue-600 transition-colors'>
+            <h3 className='text-2xl font-semibold text-slate-900 dark:text-white mb-4 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
               My Research
             </h3>
-            <p className='text-slate-600 mb-8 text-center leading-relaxed'>
+            <p className='text-slate-600 dark:text-slate-400 mb-8 text-center leading-relaxed'>
               Explore my work on biological systems and nanomaterials using
               computational modeling and molecular dynamics simulations.
             </p>
@@ -174,7 +261,7 @@ const Home = () => {
           </div>
 
           {/* Publications Card */}
-          <div className='group bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100/50'>
+          <div className='group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100/50 dark:border-slate-700/50'>
             <div className='relative mb-6'>
               <div className='flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300'>
                 <BookOpen className='w-10 h-10 text-white' />
@@ -183,10 +270,10 @@ const Home = () => {
                 className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full ${motionClass('animate-ping delay-300')}`}
               ></div>
             </div>
-            <h3 className='text-2xl font-semibold text-slate-900 mb-4 text-center group-hover:text-green-600 transition-colors'>
+            <h3 className='text-2xl font-semibold text-slate-900 dark:text-white mb-4 text-center group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors'>
               Publications
             </h3>
-            <p className='text-slate-600 mb-8 text-center leading-relaxed'>
+            <p className='text-slate-600 dark:text-slate-400 mb-8 text-center leading-relaxed'>
               Browse my published articles and works in preparation,
               contributing to the field of computational biophysics.
             </p>
@@ -202,7 +289,7 @@ const Home = () => {
           </div>
 
           {/* About Me Card */}
-          <div className='group bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100/50'>
+          <div className='group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100/50 dark:border-slate-700/50'>
             <div className='relative mb-6'>
               <div className='flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300'>
                 <User className='w-10 h-10 text-white' />
@@ -211,10 +298,10 @@ const Home = () => {
                 className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full ${motionClass('animate-ping delay-700')}`}
               ></div>
             </div>
-            <h3 className='text-2xl font-semibold text-slate-900 mb-4 text-center group-hover:text-purple-600 transition-colors'>
+            <h3 className='text-2xl font-semibold text-slate-900 dark:text-white mb-4 text-center group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors'>
               About Me
             </h3>
-            <p className='text-slate-600 mb-8 text-center leading-relaxed'>
+            <p className='text-slate-600 dark:text-slate-400 mb-8 text-center leading-relaxed'>
               Discover more about my academic journey, educational background,
               and research interests in computational biophysics.
             </p>
