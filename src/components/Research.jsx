@@ -139,12 +139,12 @@ const Research = () => {
                 </h2>
               </div>
               <p className='text-lg text-slate-700 dark:text-slate-300 leading-relaxed'>
-                I am a PhD student specializing in Computational Biophysics with
-                a primary focus on the computational modeling of biological
-                systems and nanomaterials. My research aims to leverage advanced
-                biophysical training and molecular dynamics simulations to
-                enhance our understanding of complex biological interactions and
-                the behavior of nanomaterials at the molecular level.
+                I hold a PhD in Computational Biophysics with expertise in
+                computational modeling of biological systems and carbon-based
+                nanomaterials. My research leverages advanced biophysical
+                training and molecular dynamics simulations to enhance our
+                understanding of complex biological interactions and the behavior
+                of nanomaterials at the molecular level.
               </p>
             </div>
 
