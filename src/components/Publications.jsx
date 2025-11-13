@@ -10,8 +10,8 @@ import { BookOpen, FileText, Clock, GraduationCap, ExternalLink } from 'lucide-r
  * component wraps titles with an anchor element whenever a link is provided.
  */
 
-// Google Scholar profile URL - Update this with your actual profile URL
-const GOOGLE_SCHOLAR_URL = 'https://scholar.google.com/citations?user=YOUR_USER_ID';
+// Google Scholar profile URL
+const GOOGLE_SCHOLAR_URL = 'https://scholar.google.com/citations?user=y_p39wsAAAAJ&hl=en';
 
 const Publications = () => {
   // List of published articles.  Each entry contains bibliographic details
