@@ -47,7 +47,7 @@ const Home = () => {
       icon: <BookOpen className='w-5 h-5' />,
       title: 'Paper Published in Biomacromolecules',
       description: 'Martini 3 Coarse-Grained Model for Chitosan with Tunable Acetylation',
-      date: 'November 2024',
+      date: 'October 29, 2025',
       color: 'blue',
     },
     {
@@ -55,7 +55,7 @@ const Home = () => {
       icon: <BookOpen className='w-5 h-5' />,
       title: 'Paper Published in JCTC',
       description: 'Martini 3 coarse-grained models for carbon nanomaterials',
-      date: 'September 2024',
+      date: 'September 3, 2025',
       color: 'green',
     },
     {
@@ -63,7 +63,7 @@ const Home = () => {
       icon: <Award className='w-5 h-5' />,
       title: 'PhD Defense Successfully Completed',
       description: 'Successfully defended PhD thesis in Computational Biophysics',
-      date: 'October 2024',
+      date: 'September 23, 2025',
       color: 'purple',
     },
   ];
