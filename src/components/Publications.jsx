@@ -65,6 +65,26 @@ const Publications = () => {
     },
   ];
 
+  // Helper function to render authors with "Shrestha, R." in bold
+  const renderAuthors = (authorsString) => {
+    const parts = authorsString.split('Shrestha, R.');
+    if (parts.length === 1) {
+      // Name not found, return as is
+      return authorsString;
+    }
+    // Render with bold name
+    return (
+      <>
+        {parts.map((part, index) => (
+          <React.Fragment key={index}>
+            {part}
+            {index < parts.length - 1 && <strong>Shrestha, R.</strong>}
+          </React.Fragment>
+        ))}
+      </>
+    );
+  };
+
   // Card component for displaying a single publication.  If a link is
   // provided on the publication object, the title will be rendered as a
   // hyperlink; otherwise it will be plain text.  The icon colour changes
@@ -102,7 +122,7 @@ const Publications = () => {
                 publication.title
               )}
             </h3>
-            <p className='text-slate-600 dark:text-slate-400 mb-2 italic'>{publication.authors}</p>
+            <p className='text-slate-600 dark:text-slate-400 mb-2 italic'>{renderAuthors(publication.authors)}</p>
             {isPublished && (
               <p className='text-slate-700 dark:text-slate-300'>
                 <span className='font-medium'>{publication.journal}</span>
