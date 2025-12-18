@@ -137,7 +137,7 @@ const About = () => {
                   </h3>
                   <div className='flex items-center text-slate-600 mt-1'>
                     <Calendar className='w-4 h-4 mr-2' />
-                    <span>2011</span>
+                    <span>2013</span>
                   </div>
                   <div className='flex items-center text-slate-600 mt-1'>
                     <MapPin className='w-4 h-4 mr-2' />
