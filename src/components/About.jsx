@@ -67,6 +67,22 @@ const About = () => {
           </div>
         </section>
 
+        {/* Industry Expertise Section */}
+        <section className='max-w-4xl mx-auto mb-16'>
+          <div className='bg-white rounded-lg shadow-lg p-8'>
+            <h2 className='text-2xl font-semibold text-slate-900 mb-6'>
+              Industry Expertise
+            </h2>
+            <ul className='list-disc list-inside space-y-3 text-slate-700'>
+              <li>LLM-assisted workflows for research and technical documentation.</li>
+              <li>Power Automate flow design for approvals, notifications, and data routing.</li>
+              <li>Process automation across Teams, SharePoint, and Microsoft 365.</li>
+              <li>Rapid prototyping of internal tools to streamline operations.</li>
+              <li>Best-practice guardrails for responsible AI usage.</li>
+            </ul>
+          </div>
+        </section>
+
         {/* Education Section */}
         <section className='max-w-4xl mx-auto mb-16'>
           <div className='bg-white rounded-lg shadow-lg p-8'>
