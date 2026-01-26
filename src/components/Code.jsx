@@ -1,9 +1,9 @@
 import React from 'react';
 import { Code2, ExternalLink, Github } from 'lucide-react';
+import { Button } from '@/components/ui/button.jsx';
 import grapheneImage from '../assets/code/GRA_AA_CG_model.png';
 import fullereneImage from '../assets/code/fullerene_M3.png';
-
-import { Button } from '@/components/ui/button.jsx';
+import LazyImage from './LazyImage.jsx';
 
 /*
  * Code component
@@ -26,6 +26,9 @@ const Code = () => {
       tags: ['Martini 3', 'Graphene', 'CG MD'],
       url: 'https://github.com/MoMS-MMSB/Martini3-Graphene',
       image: grapheneImage,
+      width: 2100,
+      height: 1036,
+      aspectRatio: '2100 / 1036',
     },
     {
       name: 'Martini 3 model of Fullerene',
@@ -34,6 +37,9 @@ const Code = () => {
       tags: ['Fullerene', 'Martini 3', 'CG MD', 'Builder', 'GROMACS'],
       url: 'https://github.com/MoMS-MMSB/Martini3-Fullerene',
       image: fullereneImage,
+      width: 896,
+      height: 883,
+      aspectRatio: '896 / 883',
     },
   ];
 
@@ -58,10 +64,14 @@ const Code = () => {
               <div className='relative mb-6'>
                 {/* If a custom image is provided for this tool, display it above the icon */}
                 {tool.image && (
-                  <img
+                  <LazyImage
                     src={tool.image}
                     alt={`${tool.name} illustration`}
-                    className='w-full h-auto rounded-xl mb-4'
+                    wrapperClassName='w-full mb-4'
+                    aspectRatio={tool.aspectRatio}
+                    width={tool.width}
+                    height={tool.height}
+                    imgClassName='w-full h-auto rounded-xl'
                   />
                 )}
                 <div className='flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300'>

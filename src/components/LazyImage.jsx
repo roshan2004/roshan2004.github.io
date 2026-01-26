@@ -1,6 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const LazyImage = ({ src, alt, className = '' }) => {
+const LazyImage = ({
+  src,
+  alt,
+  wrapperClassName = '',
+  imgClassName = '',
+  wrapperStyle,
+  aspectRatio,
+  width,
+  height,
+  loading = 'lazy',
+  decoding = 'async',
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const imgRef = useRef();
@@ -24,7 +35,11 @@ const LazyImage = ({ src, alt, className = '' }) => {
   }, []);
 
   return (
-    <div ref={imgRef} className={`relative ${className}`}>
+    <div
+      ref={imgRef}
+      className={`relative ${wrapperClassName}`}
+      style={aspectRatio ? { aspectRatio, ...wrapperStyle } : wrapperStyle}
+    >
       {/* Placeholder */}
       {!isLoaded && (
         <div className='absolute inset-0 bg-gray-200 animate-pulse rounded'></div>
@@ -37,9 +52,12 @@ const LazyImage = ({ src, alt, className = '' }) => {
           alt={alt}
           className={`transition-opacity duration-300 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
-          } ${className}`}
+          } ${imgClassName}`}
           onLoad={() => setIsLoaded(true)}
-          loading='lazy'
+          width={width}
+          height={height}
+          loading={loading}
+          decoding={decoding}
         />
       )}
     </div>
