@@ -141,6 +141,22 @@ const Home = () => {
                 </a>
               </Button>
             </div>
+
+            {/* Industry Expertise Highlight */}
+            <div
+              className={`mt-8 max-w-xl mx-auto lg:mx-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-blue-100/60 dark:border-slate-700/60 rounded-2xl p-6 shadow-lg ${motionClass(
+                'animate-slide-up delay-400'
+              )}`}
+            >
+              <h2 className='text-lg font-semibold text-slate-900 dark:text-white mb-3'>
+                Industry Expertise
+              </h2>
+              <ul className='list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300 text-sm'>
+                <li>LLM-assisted workflows for research and documentation</li>
+                <li>Power Automate flows for approvals, notifications, routing</li>
+                <li>Automation across Teams, SharePoint, Microsoft 365</li>
+              </ul>
+            </div>
           </div>
 
           {/* Profile Image */}
