@@ -152,7 +152,8 @@ const Home = () => {
               <LazyImage
                 src={profileImage}
                 alt='Roshan Shrestha'
-                className='relative w-full max-w-md mx-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500'
+                wrapperClassName='w-full max-w-md mx-auto'
+                imgClassName='w-full rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500'
               />
               <div
                 className={`absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg ${motionClass('animate-bounce delay-1000')}`}
