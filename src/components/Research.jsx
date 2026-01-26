@@ -12,6 +12,7 @@ import {
 import molecularDynamics from '../assets/molecular-dynamics.jpg';
 import vmdVisualization from '../assets/vmd-visualization.png';
 import chitosanAnimation from '../assets/bm5c00683_0006.gif';
+import LazyImage from './LazyImage.jsx';
 
 const Research = () => {
   // Research keywords/tags for SEO and quick overview
@@ -150,10 +151,14 @@ const Research = () => {
 
             <div className='relative animate-slide-in-right delay-400'>
               <div className='absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl blur-2xl opacity-20 animate-pulse'></div>
-              <img
+              <LazyImage
                 src={molecularDynamics}
                 alt='Molecular Dynamics Visualization'
-                className='relative w-full rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500'
+                wrapperClassName='w-full'
+                aspectRatio='1310 / 729'
+                width={1310}
+                height={729}
+                imgClassName='w-full rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500'
               />
             </div>
           </div>
@@ -164,10 +169,14 @@ const Research = () => {
           <div className='grid lg:grid-cols-2 gap-12 items-center'>
             <div className='relative animate-slide-in-left delay-500'>
               <div className='absolute inset-0 bg-gradient-to-r from-green-400 to-blue-600 rounded-2xl blur-2xl opacity-20 animate-pulse'></div>
-              <img
+              <LazyImage
                 src={vmdVisualization}
                 alt='VMD Visualization'
-                className='relative w-full rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500'
+                wrapperClassName='w-full'
+                aspectRatio='500 / 488'
+                width={500}
+                height={488}
+                imgClassName='w-full rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500'
               />
             </div>
 
@@ -229,10 +238,14 @@ const Research = () => {
 
             <div className='relative animate-slide-in-right delay-600'>
               <div className='absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-600 rounded-2xl blur-2xl opacity-20 animate-pulse'></div>
-              <img
+              <LazyImage
                 src={chitosanAnimation}
                 alt='Chitosan Molecular Dynamics Simulation'
-                className='relative w-full rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500'
+                wrapperClassName='w-full'
+                aspectRatio='500 / 397'
+                width={500}
+                height={397}
+                imgClassName='w-full rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500'
               />
             </div>
           </div>
