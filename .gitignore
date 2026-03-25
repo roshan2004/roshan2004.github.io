@@ -1,5 +1,7 @@
 node_modules
 dist
+dist2
 .DS_Store
+preview.html
 
 .aider*

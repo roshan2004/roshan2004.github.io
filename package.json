@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.2",
+    "@rollup/rollup-linux-arm64-gnu": "^4.60.0",
     "@tailwindcss/vite": "^4.1.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -40,8 +41,8 @@
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "gray-matter": "^4.0.3",
     "globals": "^16.0.0",
+    "gray-matter": "^4.0.3",
     "rollup-plugin-visualizer": "^6.0.3",
     "tw-animate-css": "^1.2.9",
     "vite": "^6.3.5"

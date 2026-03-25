@@ -1,10 +1,4 @@
 import React from 'react';
-import {
-  siLinkedin,
-  siOrcid,
-  siResearchgate,
-  siGooglescholar,
-} from 'simple-icons/icons';
 
 function BrandSvg({ title, path, hex, className = '', ...props }) {
   return (
@@ -19,34 +13,39 @@ function BrandSvg({ title, path, hex, className = '', ...props }) {
       {...props}
     >
       <title>{title}</title>
-      <path d={path} fill={`#${hex}`} />
+      <path d={path} fill='currentColor' />
     </svg>
   );
 }
 
 export const LinkedInIcon = (props) => (
-  <BrandSvg title={siLinkedin.title} path={siLinkedin.path} hex={siLinkedin.hex} {...props} />
+  <BrandSvg
+    title='LinkedIn'
+    path='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'
+    {...props}
+  />
 );
 
 export const ORCIDIcon = (props) => (
-  <BrandSvg title={siOrcid.title} path={siOrcid.path} hex={siOrcid.hex} {...props} />
+  <BrandSvg
+    title='ORCID'
+    path='M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.956-3.722h-2.363z'
+    {...props}
+  />
 );
 
 export const ResearchGateIcon = (props) => (
   <BrandSvg
-    title={siResearchgate.title}
-    path={siResearchgate.path}
-    hex={siResearchgate.hex}
+    title='ResearchGate'
+    path='M19.586 0c-2.38 0-4.329 1.89-4.595 4.32H9.74c-.41 0-.766.28-.865.678L6.77 13.354a.895.895 0 00.865 1.112h1.87l-.66 5.478a.895.895 0 00.886 1.016h2.637a.895.895 0 00.886-.774l.882-5.72h2.035c2.652 0 4.81-2.158 4.81-4.81V4.81C20.981 2.158 18.238 0 19.586 0zM4.414 24c2.38 0 4.329-1.89 4.595-4.32h5.251c.41 0 .766-.28.865-.678l2.105-8.356a.895.895 0 00-.865-1.112h-1.87l.66-5.478A.895.895 0 0014.269 3h-2.637a.895.895 0 00-.886.774l-.882 5.72H7.829c-2.652 0-4.81 2.158-4.81 4.81v4.846C3.019 21.842 5.762 24 4.414 24z'
     {...props}
   />
 );
 
 export const GoogleScholarIcon = (props) => (
   <BrandSvg
-    title={siGooglescholar.title}
-    path={siGooglescholar.path}
-    hex={siGooglescholar.hex}
+    title='Google Scholar'
+    path='M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z'
     {...props}
   />
 );
-

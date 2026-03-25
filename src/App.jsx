@@ -8,7 +8,6 @@ import './App.css';
 import usePageTracking from './hooks/usePageTracking';
 
 const About = React.lazy(() => import('./components/About'));
-const Research = React.lazy(() => import('./components/Research'));
 const Publications = React.lazy(() => import('./components/Publications'));
 const Code = React.lazy(() => import('./components/Code.jsx'));
 const Blog = React.lazy(() => import('./components/Blog'));
@@ -18,7 +17,6 @@ const Contact = React.lazy(() => import('./components/Contact'));
 const SECTION_ROUTES = {
   home: '/',
   about: '/about',
-  research: '/research',
   publications: '/publications',
   code: '/code',
   blog: '/blog',
@@ -26,42 +24,37 @@ const SECTION_ROUTES = {
 };
 
 const DEFAULT_META = {
-  title: 'Roshan Shrestha - Computational Biophysics Portfolio',
+  title: 'Roshan Shrestha — Research Engineer',
   description:
-    'Explore MD simulations, computational biophysics research, publications, and projects by Roshan Shrestha.',
+    'Roshan Shrestha — Research Engineer at Materialise NV. Computational biophysics, automation, and AI-assisted workflows.',
 };
 
 const SECTION_META = {
   home: DEFAULT_META,
   about: {
-    title: 'About Roshan Shrestha',
+    title: 'About | Roshan Shrestha',
     description:
-      'Learn more about Roshan Shrestha’s background, education, and research focus in computational biophysics.',
-  },
-  research: {
-    title: 'Research | Roshan Shrestha',
-    description:
-      'Dive into research areas spanning molecular dynamics, nanomaterials, and biological systems.',
+      'Background, education, and experience of Roshan Shrestha.',
   },
   publications: {
     title: 'Publications | Roshan Shrestha',
     description:
-      'Browse publications, preprints, and works in progress on computational biophysics.',
+      'Published articles and preprints in computational biophysics.',
   },
   code: {
     title: 'Code & Software | Roshan Shrestha',
     description:
-      'Explore tools and scripts developed for Martini 3 simulations and computational biophysics workflows.',
+      'Open-source tools for Martini 3 simulations and computational workflows.',
   },
   blog: {
     title: 'Blog | Roshan Shrestha',
     description:
-      'Read articles covering molecular dynamics, Martini 3, and computational research insights.',
+      'Articles on molecular dynamics, computational methods, and engineering.',
   },
   contact: {
-    title: 'Contact Roshan Shrestha',
+    title: 'Contact | Roshan Shrestha',
     description:
-      'Get in touch regarding research collaborations, publications, and professional inquiries.',
+      'Get in touch for collaborations or professional inquiries.',
   },
 };
 
@@ -114,20 +107,20 @@ function App() {
   }, [routeInfo]);
 
   return (
-    <div className='min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors'>
+    <div className='min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors'>
       <Header />
       <main>
         <Suspense
           fallback={
             <div className='flex items-center justify-center min-h-[60vh]'>
-              <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 dark:border-blue-400'></div>
+              <div className='animate-spin rounded-full h-8 w-8 border-2 border-slate-200 border-t-blue-600'></div>
             </div>
           }
         >
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/research' element={<Research />} />
+            <Route path='/research' element={<Navigate to='/' replace />} />
             <Route path='/publications' element={<Publications />} />
             <Route path='/code' element={<Code />} />
             <Route path='/blog' element={<Blog />} />

@@ -37,9 +37,9 @@ const Blog = () => {
   });
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 py-20 transition-colors'>
-      <div className='container mx-auto px-4 max-w-5xl'>
-        <h1 className='text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-10'>
+    <div className='min-h-screen py-20 transition-colors'>
+      <div className='max-w-3xl mx-auto px-6'>
+        <h1 className='text-3xl font-bold text-slate-900 dark:text-white mb-10'>
           Blog
         </h1>
 
@@ -117,7 +117,7 @@ const Blog = () => {
             {filtered.map((post, i) => (
               <article
                 key={i}
-                className='bg-white dark:bg-slate-800 rounded-lg shadow dark:shadow-slate-900 p-6 hover:shadow-lg dark:hover:shadow-slate-900 transition'
+                className='border border-slate-200 dark:border-slate-700 rounded-lg p-6 hover:border-blue-200 dark:hover:border-blue-900 hover:shadow-md transition-all bg-white dark:bg-slate-800/50'
               >
                 <h2 className='text-xl font-semibold text-slate-900 dark:text-white mb-2'>
                   {post.title}
