@@ -102,16 +102,15 @@ const ContractsDB = () => {
 
         <Section id='what-i-built' title='What I Built'>
           <p>
-            A conversational contract management agent deployed in Microsoft
-            Teams. Users open the agent, upload a contract PDF, and walk
-            through a guided flow — all without leaving Teams. The agent
-            handles OCR, multilingual metadata extraction, classification,
-            human review, and structured deposit into SharePoint.
+            Users open the agent in Teams, upload a contract PDF, and walk
+            through a guided flow. The agent handles OCR, multilingual
+            metadata extraction, classification, human review, and structured
+            deposit into SharePoint.
           </p>
           <p>
             The system supports two contract types (NDAs and commercial
-            agreements), extracts metadata in three languages, and provides 12
-            self-service topics for querying the contract database after
+            agreements), extracts metadata in three languages, and provides
+            nine self-service topics for querying the contract database after
             deposit.
           </p>
         </Section>
@@ -121,11 +120,11 @@ const ContractsDB = () => {
 
           <SubSection title='1. Conversational interface (Copilot Studio → Teams)'>
             <p>
-              The agent is deployed as a Teams app. Users trigger it with
-              natural language ("I want to upload a contract"), then the agent
-              guides them through a structured conversation: collecting
-              business unit, contract owner, and additional fields depending on
-              contract type, then accepting the PDF upload directly in chat.
+              Users trigger the agent with natural language ("I want to upload
+              a contract"), then it guides them through a structured
+              conversation: collecting business unit, contract owner, and
+              additional fields depending on contract type, then accepting the
+              PDF upload directly in chat.
             </p>
           </SubSection>
 
@@ -246,16 +245,15 @@ const ContractsDB = () => {
             <p>
               The agent needed to feel fast and natural inside Teams. Adaptive
               cards present extracted fields with inline editing for
-              corrections. A retry loop handles date format validation, and
-              required fields are gated before deposit can proceed — but the
-              user never leaves the Teams conversation. Inactivity handling
-              clears stale session state so long-running conversations don't
-              accumulate ghost data.
+              corrections, a retry loop handles date format validation, and
+              required fields are gated before deposit can proceed. Inactivity
+              handling clears stale session state so long-running conversations
+              don't accumulate ghost data.
             </p>
           </SubSection>
         </Section>
 
-        <Section id='topics' title='The 12-Topic Chatbot'>
+        <Section id='topics' title='The 9-Topic Chatbot'>
           <p>
             Beyond the upload pipeline, the agent provides self-service access
             to the contract database:
@@ -376,7 +374,7 @@ const ContractsDB = () => {
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                12 chatbot topics
+                9 chatbot topics
               </strong>{' '}
               providing self-service access to the contract database
             </li>
