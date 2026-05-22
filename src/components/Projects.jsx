@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import contractsdbImage from '../assets/projects/contractsdb.webp';
 
 const projects = [
   {
@@ -16,6 +17,7 @@ const projects = [
       'Dataverse',
     ],
     accent: 'from-blue-500/15 via-indigo-500/10 to-purple-500/15',
+    image: contractsdbImage,
   },
 ];
 
@@ -40,21 +42,31 @@ const Projects = () => {
               to={`/projects/${project.slug}`}
               className='group flex flex-col border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden bg-white dark:bg-slate-800/50 hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-md transition-all'
             >
-              <div
-                className={`relative h-40 bg-gradient-to-br ${project.accent} flex items-center justify-center overflow-hidden`}
-              >
+              {project.image ? (
+                <div className='h-40 flex items-center justify-center overflow-hidden bg-white dark:bg-slate-800/50 p-3'>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className='h-full w-auto object-contain'
+                  />
+                </div>
+              ) : (
                 <div
-                  className='absolute inset-0 opacity-[0.08] dark:opacity-[0.12]'
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle, currentColor 1px, transparent 1px)',
-                    backgroundSize: '16px 16px',
-                  }}
-                />
-                <span className='relative font-mono text-xs uppercase tracking-wider text-slate-600 dark:text-slate-300'>
-                  {project.slug}
-                </span>
-              </div>
+                  className={`relative h-40 bg-gradient-to-br ${project.accent} flex items-center justify-center overflow-hidden`}
+                >
+                  <div
+                    className='absolute inset-0 opacity-[0.08] dark:opacity-[0.12]'
+                    style={{
+                      backgroundImage:
+                        'radial-gradient(circle, currentColor 1px, transparent 1px)',
+                      backgroundSize: '16px 16px',
+                    }}
+                  />
+                  <span className='relative font-mono text-xs uppercase tracking-wider text-slate-600 dark:text-slate-300'>
+                    {project.slug}
+                  </span>
+                </div>
+              )}
               <div className='flex flex-col flex-1 p-5'>
                 <h2 className='text-lg font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
                   {project.title}
