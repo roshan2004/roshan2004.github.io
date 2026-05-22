@@ -23,15 +23,22 @@ const About = () => {
 
         {/* Bio */}
         <section className='mb-14'>
-          <p className='text-slate-700 dark:text-slate-300 leading-relaxed'>
-            I am a Research Engineer at Materialise NV. I recently completed my
-            PhD in Computational Biophysics in Prof. Luca Monticelli's group
-            (MMSB, CNRS), where I specialized in computational modeling of
-            biological macromolecules and nanomaterials using biophysical
-            principles and molecular dynamics simulations. Previously, I
-            obtained my M.Sc. in Theoretical Physics at the Central Department
-            of Physics, Tribhuvan University.
-          </p>
+          <div className='space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed'>
+            <p>
+              I'm a Research Engineer at Materialise NV in Leuven, Belgium,
+              where I build LLM-powered tools and Power Automate workflows for
+              internal teams, including ContractsDB Agent, a Teams chatbot for
+              end-to-end contract management.
+            </p>
+            <p>
+              Before Materialise, I completed a PhD in Computational Biophysics
+              at the Molecular Microbiology and Structural Biochemistry (MMSB)
+              lab, CNRS Lyon, in Prof. Luca Monticelli's group, working on
+              molecular dynamics models of nanomaterials and biological
+              macromolecules. I hold an M.Sc. in Physics from Tribhuvan
+              University.
+            </p>
+          </div>
         </section>
 
         {/* Experience */}
