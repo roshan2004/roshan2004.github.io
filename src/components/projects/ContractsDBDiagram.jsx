@@ -181,14 +181,14 @@ const ContractsDBDiagram = () => (
 
     <line x1='515' y1='114' x2='515' y2='132' className='arr' markerEnd='url(#cdb-arrow)' />
 
-    {/* Box 5: GPT-4o */}
+    {/* Box 5: GPT-5 */}
     <g className='c-purple'>
       <rect x='390' y='132' width='250' height='56' rx='8' strokeWidth='0.5' />
       <text className='th' x='515' y='152' textAnchor='middle' dominantBaseline='central'>
-        GPT-4o extraction
+        GPT-5 extraction
       </text>
       <text className='ts' x='515' y='172' textAnchor='middle' dominantBaseline='central'>
-        Classify + extract (4 languages)
+        Classify + extract (3 languages)
       </text>
     </g>
 
@@ -254,11 +254,11 @@ const ContractsDBDiagram = () => (
       Feedback
     </text>
 
-    {/* 12 topics bar */}
+    {/* 9 topics bar */}
     <g className='c-amber'>
       <rect x='50' y='440' width='430' height='44' rx='8' strokeWidth='0.5' />
       <text className='th' x='265' y='462' textAnchor='middle' dominantBaseline='central'>
-        12 chatbot topics: search, alerts, Q&amp;A, duplicates, status, and more
+        9 chatbot topics: search, alerts, Q&amp;A, duplicates, status, and more
       </text>
     </g>
 
