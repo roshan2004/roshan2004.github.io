@@ -51,7 +51,7 @@ const Code = () => {
               {tool.image && (
                 <div
                   className='flex items-center justify-center overflow-hidden rounded-t-lg'
-                  style={{ height: '200px', width: '100%', backgroundColor: '#f5f5f5', padding: '16px' }}
+                  style={{ height: '200px', width: '100%', padding: '16px' }}
                 >
                   <LazyImage
                     src={tool.image}
