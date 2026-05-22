@@ -10,6 +10,10 @@ import usePageTracking from './hooks/usePageTracking';
 const About = React.lazy(() => import('./components/About'));
 const Publications = React.lazy(() => import('./components/Publications'));
 const Code = React.lazy(() => import('./components/Code.jsx'));
+const Projects = React.lazy(() => import('./components/Projects.jsx'));
+const ProjectContractsDB = React.lazy(() =>
+  import('./components/projects/ContractsDB.jsx')
+);
 const Blog = React.lazy(() => import('./components/Blog'));
 const Post = React.lazy(() => import('./components/Post'));
 const Contact = React.lazy(() => import('./components/Contact'));
@@ -19,6 +23,7 @@ const SECTION_ROUTES = {
   about: '/about',
   publications: '/publications',
   code: '/code',
+  projects: '/projects',
   blog: '/blog',
   contact: '/contact',
 };
@@ -45,6 +50,11 @@ const SECTION_META = {
     title: 'Code & Software | Roshan Shrestha',
     description:
       'Open-source tools for Martini 3 simulations and computational workflows.',
+  },
+  projects: {
+    title: 'Projects | Roshan Shrestha',
+    description:
+      'Selected engineering projects combining LLMs, automation, and enterprise workflows.',
   },
   blog: {
     title: 'Blog | Roshan Shrestha',
@@ -123,6 +133,11 @@ function App() {
             <Route path='/research' element={<Navigate to='/' replace />} />
             <Route path='/publications' element={<Publications />} />
             <Route path='/code' element={<Code />} />
+            <Route path='/projects' element={<Projects />} />
+            <Route
+              path='/projects/contractsdb'
+              element={<ProjectContractsDB />}
+            />
             <Route path='/blog' element={<Blog />} />
             <Route path='/blog/:slug' element={<Post />} />
             <Route path='/contact' element={<Contact />} />
