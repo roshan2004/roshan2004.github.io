@@ -15,6 +15,7 @@ const projects = [
       'GPT-5',
       'SharePoint',
       'Dataverse',
+      'Adaptive Cards',
     ],
     accent: 'from-blue-500/15 via-indigo-500/10 to-purple-500/15',
     image: contractsdbImage,
