@@ -12,7 +12,7 @@ const projects = [
     tags: [
       'Copilot Studio',
       'Power Automate',
-      'GPT-4o',
+      'GPT-5',
       'SharePoint',
       'Dataverse',
     ],

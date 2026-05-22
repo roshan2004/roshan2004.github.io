@@ -6,7 +6,7 @@ import ContractsDBDiagram from './ContractsDBDiagram.jsx';
 const techStack = [
   ['Conversational UI', 'Microsoft Copilot Studio, deployed to Teams'],
   ['Orchestration', 'Power Automate (cloud flows, child flows, agent flows)'],
-  ['AI / LLM', 'GPT-4o via AI Builder, Azure Document Intelligence'],
+  ['AI / LLM', 'GPT-5 via AI Builder, Azure Document Intelligence'],
   ['Storage', 'SharePoint Online (Document Sets, Document Libraries)'],
   ['Logging & Tracking', 'Dataverse (ContractPipelineLog)'],
   ['Review Interface', 'Teams Adaptive Cards (in-conversation)'],
@@ -19,7 +19,7 @@ const techStack = [
 const tags = [
   'Copilot Studio',
   'Power Automate',
-  'GPT-4o',
+  'GPT-5',
   'SharePoint',
   'Dataverse',
   'Adaptive Cards',
@@ -87,7 +87,7 @@ const ContractsDB = () => {
           <p>
             A multinational manufacturing company manages hundreds of contracts
             — NDAs, commercial agreements, service contracts — across multiple
-            languages (English, Dutch, French, German). The legal and
+            languages (English, Dutch, and French). The legal and
             procurement teams were manually processing every incoming contract:
             reading PDFs, extracting key metadata (parties, dates, governing
             law, obligations), creating folder structures, and depositing
@@ -110,7 +110,7 @@ const ContractsDB = () => {
           </p>
           <p>
             The system supports two contract types (NDAs and commercial
-            agreements), extracts metadata in four languages, and provides 12
+            agreements), extracts metadata in three languages, and provides 12
             self-service topics for querying the contract database after
             deposit.
           </p>
@@ -144,7 +144,7 @@ const ContractsDB = () => {
                 or Related Document such as an annex or amendment)
               </li>
               <li>
-                For contracts: calls the appropriate extraction prompt (GPT-4o
+                For contracts: calls the appropriate extraction prompt (GPT-5
                 via AI Builder) — 8 fields for NDAs, 16 for commercial
                 contracts
               </li>
@@ -180,14 +180,14 @@ const ContractsDB = () => {
         <Section id='challenges' title='Key Technical Challenges'>
           <SubSection title='Multilingual Extraction at Scale'>
             <p>
-              Commercial contracts arrive in English, Dutch, French, and
-              German. The extraction prompt needed to handle not just language
-              detection, but field-level normalization — a
-              "Vertrouwelijkheidsovereenkomst" is an NDA, a
-              "Geheimhaltungsvereinbarung" is also an NDA. I built an
-              evaluation pipeline against 50 annotated training contracts to
-              measure field-level accuracy across all four languages and
-              iteratively refined the prompt.
+              Commercial contracts arrive in English, Dutch, and French. The
+              extraction prompt needed to handle not just language detection,
+              but field-level normalization — a
+              "Vertrouwelijkheidsovereenkomst" is an NDA, an "accord de
+              confidentialité" is also an NDA. I built an evaluation pipeline
+              against 50 annotated training contracts to measure field-level
+              accuracy across all three languages and iteratively refined the
+              prompt.
             </p>
           </SubSection>
 
@@ -197,7 +197,7 @@ const ContractsDB = () => {
               need to add annexes, addenda, amendments, and prolongations to
               existing agreements. Rather than building a separate workflow, I
               integrated a classifier into the unified upload topic: when a
-              user uploads any document, the classifier (GPT-4o) determines
+              user uploads any document, the classifier (GPT-5) determines
               whether it's an NDA, a Commercial contract, or a Related Document
               — and also extracts the parent agreement name when it detects a
               related document.
@@ -364,9 +364,9 @@ const ContractsDB = () => {
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                4-language support
+                3-language support
               </strong>{' '}
-              (EN, NL, FR, DE) with consistent extraction quality
+              (EN, NL, FR) with consistent extraction quality
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
@@ -392,9 +392,9 @@ const ContractsDB = () => {
         <Section id='what-i-learned' title='What I Learned'>
           <p>
             This project taught me that the hardest part of enterprise AI isn't
-            the model — it's the plumbing. Getting GPT-4o to extract contract
+            the model — it's the plumbing. Getting GPT-5 to extract contract
             fields was the easy part. Making SharePoint accept those fields
-            reliably, handling edge cases in company names across four
+            reliably, handling edge cases in company names across three
             languages, and designing a conversational UX that legal teams would
             actually use — that's where the real engineering happens.
           </p>
@@ -407,7 +407,7 @@ const ContractsDB = () => {
         </Section>
 
         <p className='text-sm italic text-slate-500 dark:text-slate-400 mt-16 pt-6 border-t border-slate-200 dark:border-slate-800'>
-          Built at Materialise NV, Leuven, Belgium. 2024–2025.
+          Built at Materialise NV, Leuven, Belgium. 2025–2026.
         </p>
       </div>
     </div>
