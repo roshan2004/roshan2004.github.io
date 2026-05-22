@@ -13,7 +13,6 @@ const Code = () => {
       tags: ['Martini 3', 'Graphene', 'CG MD'],
       url: 'https://github.com/MoMS-MMSB/Martini3-Graphene',
       image: grapheneImage,
-      aspectRatio: '2100 / 1036',
     },
     {
       name: 'Martini 3 model of Fullerene',
@@ -22,7 +21,6 @@ const Code = () => {
       tags: ['Fullerene', 'Martini 3', 'CG MD', 'GROMACS'],
       url: 'https://github.com/MoMS-MMSB/Martini3-Fullerene',
       image: fullereneImage,
-      aspectRatio: '896 / 883',
     },
   ];
 
@@ -51,13 +49,12 @@ const Code = () => {
               className='border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden hover:border-blue-200 dark:hover:border-blue-900 hover:shadow-md transition-all bg-white dark:bg-slate-800/50'
             >
               {tool.image && (
-                <div className='max-h-64 overflow-hidden'>
+                <div className='flex items-center justify-center overflow-hidden bg-slate-100 dark:bg-slate-900/40' style={{ maxHeight: '250px', height: '250px' }}>
                   <LazyImage
                     src={tool.image}
                     alt={tool.name}
-                    wrapperClassName='w-full'
-                    aspectRatio={tool.aspectRatio}
-                    imgClassName='w-full h-auto object-cover object-center'
+                    wrapperClassName='w-full h-full'
+                    imgClassName='w-full h-full object-cover object-center'
                   />
                 </div>
               )}
