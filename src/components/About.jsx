@@ -69,7 +69,7 @@ const About = () => {
                 PhD in Computational Biophysics
               </h3>
               <p className='text-slate-500 dark:text-slate-400 text-sm'>
-                University of Lyon 1 &middot; 2021 &ndash; 2025
+                University of Lyon 1 &middot; 2025
               </p>
             </div>
             <div>
@@ -77,7 +77,7 @@ const About = () => {
                 M.Sc. in Physics
               </h3>
               <p className='text-slate-500 dark:text-slate-400 text-sm'>
-                Tribhuvan University
+                Tribhuvan University &middot; 2019
               </p>
             </div>
             <div>
