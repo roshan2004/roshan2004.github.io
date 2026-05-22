@@ -49,12 +49,15 @@ const Code = () => {
               className='border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden hover:border-blue-200 dark:hover:border-blue-900 hover:shadow-md transition-all bg-white dark:bg-slate-800/50'
             >
               {tool.image && (
-                <div className='flex items-center justify-center overflow-hidden bg-slate-100 dark:bg-slate-900/40' style={{ maxHeight: '250px', height: '250px' }}>
+                <div
+                  className='flex items-center justify-center overflow-hidden rounded-t-lg'
+                  style={{ height: '200px', width: '100%', backgroundColor: '#f5f5f5', padding: '16px' }}
+                >
                   <LazyImage
                     src={tool.image}
                     alt={tool.name}
                     wrapperClassName='w-full h-full'
-                    imgClassName='w-full h-full object-cover object-center'
+                    imgClassName='w-full h-full object-contain object-center'
                   />
                 </div>
               )}
