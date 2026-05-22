@@ -199,17 +199,15 @@ const Home = () => {
               <button
                 key={mod.path}
                 onClick={() => navigate(mod.path)}
-                className='group text-left p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-sm transition-all'
+                className='group flex flex-col text-left p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-sm transition-all'
               >
-                <div className='flex items-center justify-between mb-2'>
-                  <span className='font-semibold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
-                    {mod.label}
-                  </span>
-                  <ArrowRight className='w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors' />
-                </div>
+                <span className='font-semibold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2'>
+                  {mod.label}
+                </span>
                 <span className='font-mono text-[11px] text-slate-400 dark:text-slate-500'>
                   {mod.count}
                 </span>
+                <ArrowRight className='mt-auto pt-3 self-end w-3.5 h-3.5 box-content text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors' />
               </button>
             ))}
           </div>
