@@ -41,6 +41,11 @@ const Home = () => {
 
   const navModules = [
     {
+      label: 'Projects',
+      path: '/projects',
+      count: 'ContractsDB Agent',
+    },
+    {
       label: 'Publications',
       path: '/publications',
       count: '3 articles + 1 preprint',
@@ -189,7 +194,7 @@ const Home = () => {
           <h2 className='font-mono text-xs uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-6'>
             // explore
           </h2>
-          <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-4'>
+          <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
             {navModules.map((mod) => (
               <button
                 key={mod.path}
