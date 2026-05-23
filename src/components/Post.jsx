@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
+import rehypeRaw from 'rehype-raw';
 import { useNavigate, useParams } from 'react-router-dom';
 import 'katex/dist/katex.min.css'; // <-- important
 import posts from '../data/posts.json';
@@ -65,7 +66,7 @@ const Post = () => {
           <article className='prose dark:prose-invert max-w-none'>
             <ReactMarkdown
               remarkPlugins={[remarkGfm, remarkMath]}
-              rehypePlugins={[rehypeKatex]}
+              rehypePlugins={[rehypeRaw, rehypeKatex]}
             >
               {content}
             </ReactMarkdown>
