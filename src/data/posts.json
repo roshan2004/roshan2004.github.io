@@ -1,5 +1,24 @@
 [
   {
+    "slug": "building-contractsdb-agent",
+    "title": "Building ContractsDB Agent: the 80% that wasn't the LLM",
+    "date": "2026-05-23",
+    "excerpt": "The model was the easy part. SharePoint taxonomy fields, multilingual evaluation, and conversational UX is where the real engineering lived.",
+    "tags": [
+      "LLM",
+      "Copilot Studio",
+      "Power Automate",
+      "enterprise AI",
+      "evaluation"
+    ],
+    "authors": [
+      "Roshan Shrestha"
+    ],
+    "hero": "/images/blog/contractsdb-hero.webp",
+    "image": "/images/blog/contractsdb-hero.webp",
+    "readingTime": 5
+  },
+  {
     "slug": "martini-3-coarse-grained-force-field",
     "title": "Martini 3 Coarse-Grained Force Field",
     "date": "2025-08-19",
