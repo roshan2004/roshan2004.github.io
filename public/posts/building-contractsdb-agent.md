@@ -13,7 +13,7 @@ authors:
   - Roshan Shrestha
 ---
 
-![ContractsDB Agent](/images/blog/contractsdb-hero.webp)
+<img src="/images/blog/contractsdb-hero.webp" alt="ContractsDB Agent" style="max-width: 280px; width: 100%; margin: 0 auto; display: block;" />
 
 I recently shipped [ContractsDB Agent](/projects/contractsdb), a Microsoft Teams chatbot for end-to-end contract management. Upload a contract and it walks you through OCR, multilingual extraction, classification, human review, and deposit into SharePoint. Ask it a question and it searches the contract database, flags expiring agreements, or answers free-form questions about a specific contract. Hundreds of contracts a year, three languages, two contract types, nine self-service query topics, all inside one Teams conversation.
 
