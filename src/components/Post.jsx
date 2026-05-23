@@ -60,6 +60,21 @@ const Post = () => {
         <h1 className='text-3xl md:text-4xl font-bold mt-4 mb-2 text-slate-900 dark:text-white'>
           {post.title}
         </h1>
+        <div className='flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500 dark:text-slate-400 mb-6'>
+          <time dateTime={post.date}>
+            {new Date(post.date).toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </time>
+          {post.readingTime && (
+            <>
+              <span aria-hidden='true'>·</span>
+              <span>{post.readingTime} min read</span>
+            </>
+          )}
+        </div>
         {error ? (
           <p className='text-red-600 dark:text-red-400'>{error}</p>
         ) : (
