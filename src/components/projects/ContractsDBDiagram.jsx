@@ -254,11 +254,11 @@ const ContractsDBDiagram = () => (
       Feedback
     </text>
 
-    {/* 9 topics bar */}
+    {/* 12 topics bar */}
     <g className='c-amber'>
       <rect x='50' y='440' width='430' height='44' rx='8' strokeWidth='0.5' />
       <text className='th' x='265' y='462' textAnchor='middle' dominantBaseline='central'>
-        9 chatbot topics: search, alerts, Q&amp;A, duplicates, status, and more
+        12 chatbot topics: search, alerts, Q&amp;A, duplicates, status, and more
       </text>
     </g>
 

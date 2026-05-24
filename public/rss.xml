@@ -5,6 +5,13 @@
     <link>https://shrestharoshan.com/blog</link>
     <description>Insights on computational biophysics, Martini 3, and molecular simulations.</description>
     <item>
+      <title>Building ContractsDB Agent: the 80% that wasn&apos;t the LLM</title>
+      <link>https://shrestharoshan.com/blog/building-contractsdb-agent</link>
+      <guid>https://shrestharoshan.com/blog/building-contractsdb-agent</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[The model was the easy part. SharePoint taxonomy fields, multilingual evaluation, and conversational UX is where the real engineering lived.]]></description>
+    </item>
+    <item>
       <title>Martini 3 Coarse-Grained Force Field</title>
       <link>https://shrestharoshan.com/blog/martini-3-coarse-grained-force-field</link>
       <guid>https://shrestharoshan.com/blog/martini-3-coarse-grained-force-field</guid>

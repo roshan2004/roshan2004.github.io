@@ -85,18 +85,19 @@ const ContractsDB = () => {
 
         <Section id='the-problem' title='The Problem'>
           <p>
-            A multinational manufacturing company manages hundreds of contracts
-            — NDAs, commercial agreements, service contracts — across multiple
-            languages (English, Dutch, and French). The legal and
-            procurement teams were manually processing every incoming contract:
-            reading PDFs, extracting key metadata (parties, dates, governing
-            law, obligations), creating folder structures, and depositing
-            documents into SharePoint.
+            Materialise NV, headquartered in Leuven, Belgium, manages thousands
+            of active contracts across 13 business units and 13 global offices
+            (NDAs, commercial agreements, service contracts), in three working
+            languages: English, Dutch, and French. The legal team was manually
+            processing every incoming contract: reading the PDF, classifying
+            it, extracting metadata across 16+ fields, creating the correct
+            folder structure in SharePoint, and depositing it into the
+            contract database. Each contract took over 20 minutes.
           </p>
           <p>
             This process was slow, error-prone, and didn't scale. Critical
             details were missed, contracts expired without notice, and there
-            was no centralized way to search or query the contract portfolio.
+            was no centralised way to search or query the contract portfolio.
           </p>
         </Section>
 
@@ -110,8 +111,8 @@ const ContractsDB = () => {
           <p>
             The system supports two contract types (NDAs and commercial
             agreements), extracts metadata in three languages, and provides
-            nine self-service topics for querying the contract database after
-            deposit.
+            twelve self-service topics for querying the contract database
+            after deposit.
           </p>
         </Section>
 
@@ -158,13 +159,24 @@ const ContractsDB = () => {
 
           <SubSection title='3. Review and deposit'>
             <p>
-              The agent displays extracted metadata in a dynamic adaptive card.
-              The user can review, correct any field through an edit loop, and
-              ask free-form questions about the contract (PDF text extraction +
-              LLM Q&amp;A). Once confirmed, the agent triggers a deposit flow
-              that creates the party folder structure in SharePoint, uploads
-              the PDF as a Document Set with all metadata fields, and logs the
-              transaction to Dataverse.
+              Before showing the metadata, the flow runs a two-level duplicate
+              check against ContractsDB: Level 1 matches on date, title, and
+              document type; Level 2 falls back to substring matching with
+              SharePoint link resolution. A contract-party lookup runs in
+              parallel so the same company isn't entered under slightly
+              different spellings.
+            </p>
+            <p>
+              The agent then displays extracted metadata in a dynamic adaptive
+              card. The user can review, correct any field through an edit
+              loop, and ask free-form questions about the contract (PDF text
+              extraction + LLM Q&amp;A). Once confirmed, the agent triggers a
+              deposit flow that creates the party folder structure in
+              SharePoint, uploads the PDF as a Document Set with all metadata
+              fields, and logs the transaction to a Dataverse table
+              (ContractPipelineLog) capturing both the original AI-extracted
+              values and any human corrections, so field-level accuracy can be
+              measured per contract.
             </p>
           </SubSection>
 
@@ -253,62 +265,98 @@ const ContractsDB = () => {
           </SubSection>
         </Section>
 
-        <Section id='topics' title='The 9-Topic Chatbot'>
+        <Section id='topics' title='The 12-Topic Chatbot'>
           <p>
             Beyond the upload pipeline, the agent provides self-service access
             to the contract database:
           </p>
           <ul className='list-disc pl-6 space-y-1.5'>
             <li>
-              <strong className='text-slate-900 dark:text-white'>Upload</strong>{' '}
-              a document (unified flow — classifier routes contracts to
-              extraction, related documents to parent agreement)
-            </li>
-            <li>
-              <strong className='text-slate-900 dark:text-white'>Search</strong>{' '}
-              contracts by party, type, or keyword
+              <strong className='text-slate-900 dark:text-white'>
+                Upload a Contract
+              </strong>
+              : unified flow with AI classification (NDA, Commercial, Related
+                Document), metadata extraction, duplicate detection, contract
+                party deduplication, human review via adaptive card,
+                SharePoint deposit, and sign-off document upload.
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                Track uploads
-              </strong>{' '}
-              in real-time through the pipeline
+                Search Contracts
+              </strong>
+              : natural language search with a business-unit filter, bullet
+                list output, and direct SharePoint links.
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                Get alerts
-              </strong>{' '}
-              on expiring contracts with direct links to source folders
+                Contract Status
+              </strong>
+              : dual-mode flow (search list with status per row, then drill
+                into details), showing Party, Owner, BU, Effective, Expires,
+                and Status.
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                Ask questions
+                Track My Upload
               </strong>{' '}
-              about specific contracts (PDF text extraction + LLM Q&amp;A)
+              (ContractPipelineStatus): users follow their submitted contracts
+              through every pipeline stage.
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                View field accuracy
+                Pipeline Log
               </strong>{' '}
-              statistics across the extraction pipeline
+              (ContractPipelineLog): processing history, deposit status, and
+              field accuracy for auditing.
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                Detect duplicates
-              </strong>{' '}
-              before new contracts are deposited
+                Daily Alert
+              </strong>
+              : automated notifications for contracts requiring attention,
+                including failed deposits.
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                Check contract status
-              </strong>{' '}
-              and recently started contracts
+                Field Accuracy Stats
+              </strong>
+              : dashboard showing AI extraction accuracy across processed
+                contracts.
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                Get contract details
-              </strong>{' '}
-              for any record in the database
+                Duplicate Detection
+              </strong>
+              : on-demand duplicate checking with two-level matching (Level 1
+                on date, title, and document type; Level 2 on title
+                substring).
+            </li>
+            <li>
+              <strong className='text-slate-900 dark:text-white'>
+                Expiring Contracts
+              </strong>
+              : view contracts expiring within a configurable timeframe, with
+                links to contract party folders.
+            </li>
+            <li>
+              <strong className='text-slate-900 dark:text-white'>
+                Recently Started Contracts
+              </strong>
+              : view contracts that recently became effective.
+            </li>
+            <li>
+              <strong className='text-slate-900 dark:text-white'>
+                Get Contract Details
+              </strong>
+              : retrieve full metadata for any specific contract.
+            </li>
+            <li>
+              <strong className='text-slate-900 dark:text-white'>
+                Ask About a Contract
+              </strong>
+              : upload or reference a PDF and ask natural language questions
+                about its contents, powered by OCR text extraction and a
+                GPT-5 QA loop.
             </li>
           </ul>
           <p>
@@ -350,6 +398,12 @@ const ContractsDB = () => {
           <ul className='list-disc pl-6 space-y-1.5'>
             <li>
               <strong className='text-slate-900 dark:text-white'>
+                20+ minutes to under 2 minutes
+              </strong>{' '}
+              per contract, with AI-verified accuracy and human review
+            </li>
+            <li>
+              <strong className='text-slate-900 dark:text-white'>
                 Full automation
               </strong>{' '}
               of contract processing from upload to SharePoint deposit
@@ -374,7 +428,7 @@ const ContractsDB = () => {
             </li>
             <li>
               <strong className='text-slate-900 dark:text-white'>
-                9 chatbot topics
+                12 chatbot topics
               </strong>{' '}
               providing self-service access to the contract database
             </li>

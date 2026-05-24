@@ -15,7 +15,7 @@ authors:
 
 <img src="/images/blog/contractsdb-hero.webp" alt="ContractsDB Agent" style="max-width: 280px; width: 100%; margin: 0 auto; display: block;" />
 
-I recently shipped [ContractsDB Agent](/projects/contractsdb), a Microsoft Teams chatbot for end-to-end contract management. Upload a contract and it walks you through OCR, multilingual extraction, classification, human review, and deposit into SharePoint. Ask it a question and it searches the contract database, flags expiring agreements, or answers free-form questions about a specific contract. Hundreds of contracts a year, three languages, two contract types, nine self-service query topics, all inside one Teams conversation.
+I recently shipped [ContractsDB Agent](/projects/contractsdb) at Materialise, a Microsoft Teams chatbot for end-to-end contract management. Upload a contract and it walks you through OCR, multilingual extraction, classification, human review, and deposit into SharePoint. Ask it a question and it searches the contract database, flags expiring agreements, or answers free-form questions about a specific contract. Thousands of active contracts, hundreds new each year, three languages, two contract types, twelve self-service query topics, all inside one Teams conversation.
 
 If you read the [project page](/projects/contractsdb), you saw the architecture diagram and the polished story. This post is the messier version: four things I learned that did not make it into the diagram.
 
@@ -47,7 +47,7 @@ Three completely different downstream paths, one upload topic, the user never ha
 
 Commercial contracts come in English, Dutch, and French. The first version of the extraction prompt worked great on English, okay on Dutch, and made up plausible nonsense in French. The problem was not the model. The problem was that I had no way to know which language was failing on which fields, so every prompt change was a vibes-based shot in the dark.
 
-I built an evaluation pipeline. Fifty annotated contracts from past business, fifteen extracted fields per contract, a Python script that runs the current prompt against the entire set and scores each field for exact match, fuzzy match, or miss. The output is a heatmap by language and by field. The prompt iteration loop changed from "did this feel better?" to "expiration_date accuracy went from 0.71 to 0.92 in French, but party_address dropped from 0.95 to 0.88 in Dutch, so the change is a net negative."
+I built an evaluation pipeline. Fifty annotated contracts from past business, sixteen extracted fields per contract, a Python script that runs the current prompt against the entire set and scores each field for exact match, fuzzy match, or miss. The output is a heatmap by language and by field. The prompt iteration loop changed from "did this feel better?" to "expiration_date accuracy went from 0.71 to 0.92 in French, but party_address dropped from 0.95 to 0.88 in Dutch, so the change is a net negative."
 
 The eval set caught regressions I would have otherwise shipped. It also flagged genuinely hard fields where the contract itself was ambiguous, which became a useful signal for what to confirm with the user during the adaptive card review step. If you are building any extraction system, build the eval set before you tune the prompt. Even fifty examples is enough to stop you from guessing.
 
@@ -61,4 +61,4 @@ This shifts the engineering target. Instead of optimising for "extraction accura
 
 ## Closing
 
-The architecture diagram on the [project page](/projects/contractsdb) shows seven boxes and four arrows. About one box and one arrow were truly LLM work. The other six were plumbing, routing, evaluation, and UX. That ratio surprised me when I started, but it is probably the realistic ratio for most enterprise AI projects right now. The same pattern repeated across the nine self-service query topics that sit on top of the contract database: each "ask the chatbot" feature is mostly a Power Automate flow, with one or two LLM calls inside it. The models are good enough. The integration is what you build.
+The architecture diagram on the [project page](/projects/contractsdb) shows seven boxes and four arrows. About one box and one arrow were truly LLM work. The other six were plumbing, routing, evaluation, and UX. That ratio surprised me when I started, but it is probably the realistic ratio for most enterprise AI projects right now. The same pattern repeated across the twelve self-service query topics that sit on top of the contract database: each "ask the chatbot" feature is mostly a Power Automate flow, with one or two LLM calls inside it. The models are good enough. The integration is what you build.
