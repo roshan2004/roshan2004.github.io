@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://shrestharoshan.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://shrestharoshan.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://shrestharoshan.com/publications</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://shrestharoshan.com/code</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shrestharoshan.com/projects</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shrestharoshan.com/projects/contractsdb</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shrestharoshan.com/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://shrestharoshan.com/contact</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shrestharoshan.com/blog/building-contractsdb-agent</loc><lastmod>2026-05-23</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shrestharoshan.com/blog/martini-3-coarse-grained-force-field</loc><lastmod>2025-08-19</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shrestharoshan.com/blog/use-of-position-restraint</loc><lastmod>2025-08-14</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.shrestharoshan.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.shrestharoshan.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shrestharoshan.com/publications</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shrestharoshan.com/code</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shrestharoshan.com/projects</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shrestharoshan.com/projects/contractsdb</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shrestharoshan.com/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shrestharoshan.com/contact</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.shrestharoshan.com/blog/building-contractsdb-agent</loc><lastmod>2026-05-23</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.shrestharoshan.com/blog/martini-3-coarse-grained-force-field</loc><lastmod>2025-08-19</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.shrestharoshan.com/blog/use-of-position-restraint</loc><lastmod>2025-08-14</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>

@@ -12,7 +12,7 @@ const postsDir = path.join(projectRoot, 'public', 'posts');
 const postsJsonPath = path.join(projectRoot, 'src', 'data', 'posts.json');
 const rssPath = path.join(projectRoot, 'public', 'rss.xml');
 const sitemapPath = path.join(projectRoot, 'public', 'sitemap.xml');
-const SITE_URL = process.env.SITE_URL || 'https://shrestharoshan.com';
+const SITE_URL = process.env.SITE_URL || 'https://www.shrestharoshan.com';
 
 function slugFromFile(filename) {
   return filename.replace(/\.md$/, '');
