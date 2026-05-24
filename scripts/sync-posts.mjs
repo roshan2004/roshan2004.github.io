@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
+import { STATIC_ROUTES } from '../src/data/siteMeta.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,6 +11,7 @@ const projectRoot = path.resolve(__dirname, '..');
 const postsDir = path.join(projectRoot, 'public', 'posts');
 const postsJsonPath = path.join(projectRoot, 'src', 'data', 'posts.json');
 const rssPath = path.join(projectRoot, 'public', 'rss.xml');
+const sitemapPath = path.join(projectRoot, 'public', 'sitemap.xml');
 const SITE_URL = process.env.SITE_URL || 'https://shrestharoshan.com';
 
 function slugFromFile(filename) {
@@ -84,6 +86,25 @@ ${items}
 `;
 }
 
+function buildSitemap(posts) {
+  const staticEntries = STATIC_ROUTES.map((route) => {
+    const loc = `${SITE_URL}${route.path}`;
+    return `  <url><loc>${escapeXml(loc)}</loc><changefreq>${route.changefreq}</changefreq><priority>${route.priority}</priority></url>`;
+  });
+
+  const postEntries = posts.map((post) => {
+    const loc = `${SITE_URL}/blog/${post.slug}`;
+    const lastmod = new Date(post.date).toISOString().slice(0, 10);
+    return `  <url><loc>${escapeXml(loc)}</loc><lastmod>${lastmod}</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>`;
+  });
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${[...staticEntries, ...postEntries].join('\n')}
+</urlset>
+`;
+}
+
 async function ensureDirExists(targetPath) {
   await fs.mkdir(path.dirname(targetPath), { recursive: true });
 }
@@ -133,7 +154,12 @@ async function main() {
   await ensureDirExists(rssPath);
   await fs.writeFile(rssPath, buildRss(posts), 'utf8');
 
-  console.log(`[sync-posts] Generated metadata for ${posts.length} posts.`);
+  await ensureDirExists(sitemapPath);
+  await fs.writeFile(sitemapPath, buildSitemap(posts), 'utf8');
+
+  console.log(
+    `[sync-posts] Generated metadata, RSS, and sitemap for ${posts.length} posts.`
+  );
 }
 
 main().catch((error) => {
