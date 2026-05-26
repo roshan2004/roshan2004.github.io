@@ -3,9 +3,18 @@ import { ExternalLink } from 'lucide-react';
 import LazyImage from './LazyImage.jsx';
 import grapheneImage from '../assets/code/GRA_AA_CG_model.png';
 import fullereneImage from '../assets/code/fullerene_M3.png';
+import molscopeImage from '../assets/code/molscope.png';
 
 const Code = () => {
   const tools = [
+    {
+      name: 'MolScope',
+      description:
+        'A lightweight Python toolkit for reading molecular structure files (XYZ, PDB, mmCIF, SDF), running 3D structural analysis, and exporting molecular graphs for machine learning. Includes visualisation, secondary structure assignment, NMR ensemble analysis, and coarse-graining.',
+      tags: ['Python', 'Structure analysis', 'Visualisation', 'ML graphs'],
+      url: 'https://github.com/roshan2004/molscope',
+      image: molscopeImage,
+    },
     {
       name: 'Martini 3 model of Graphene',
       description:
