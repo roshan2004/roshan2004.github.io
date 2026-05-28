@@ -5,6 +5,13 @@
     <link>https://www.shrestharoshan.com/blog</link>
     <description>Insights on computational biophysics, Martini 3, and molecular simulations.</description>
     <item>
+      <title>Introducing MolScope: lightweight molecular structure analysis in Python</title>
+      <link>https://www.shrestharoshan.com/blog/introducing-molscope</link>
+      <guid>https://www.shrestharoshan.com/blog/introducing-molscope</guid>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A small Python toolkit for reading PDB, mmCIF, XYZ and SDF files, computing descriptors, exporting graphs to PyTorch Geometric, and prototyping coarse-grained mappings, without dragging in a whole ecosystem.]]></description>
+    </item>
+    <item>
       <title>Building ContractsDB Agent: the 80% that wasn&apos;t the LLM</title>
       <link>https://www.shrestharoshan.com/blog/building-contractsdb-agent</link>
       <guid>https://www.shrestharoshan.com/blog/building-contractsdb-agent</guid>
